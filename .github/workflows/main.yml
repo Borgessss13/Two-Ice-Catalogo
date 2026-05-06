@@ -1,0 +1,22 @@
+name: Atualizar Site Automaticamente
+on:
+  schedule:
+    - cron: '0 0 * * *' # Corre todos os dias à meia-noite
+  workflow_dispatch: # Permite-te clicar num botão para atualizar na hora
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Instalar Python
+        run: pip install requests beautifulsoup4
+      - name: Correr Robô
+        run: python atualizar_catalogo.py
+      - name: Guardar Alterações
+        run: |
+          git config --global user.name 'Robo-Catalogo'
+          git config --global user.email 'bot@github.com'
+          git add dados.json
+          git commit -m "Catálogo atualizado automaticamente"
+          git push
