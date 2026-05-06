@@ -1,45 +1,29 @@
-const dados = [
-    {
-        liga: "Premier League",
-        clubes: [
-            { nome: "Arsenal", fotos: ["link-da-foto-1.jpg", "link-da-foto-2.jpg"] },
-            { nome: "Man City", fotos: ["link-da-foto-3.jpg"] }
-        ]
-    },
-    {
-        liga: "Liga Portugal",
-        clubes: [
-            { nome: "Benfica", fotos: ["foto1.jpg"] }
-        ]
-    }
-];
-
 const listaDiv = document.getElementById('lista');
 
-function mostrarLigas() {
+// Esta função vai buscar o ficheiro que o robô criou
+async function carregarDados() {
+    try {
+        const response = await fetch('dados.json');
+        const dados = await response.json();
+        mostrarAlbuns(dados);
+    } catch (error) {
+        console.error("Erro ao carregar os dados:", error);
+        listaDiv.innerHTML = "Erro ao carregar o catálogo.";
+    }
+}
+
+function mostrarAlbuns(albuns) {
     listaDiv.innerHTML = '';
-    dados.forEach((item, index) => {
-        let btn = `<div class="card" onclick="mostrarClubes(${index})">${item.liga}</div>`;
-        listaDiv.innerHTML += btn;
+    albuns.forEach((album) => {
+        // Cria um "card" para cada álbum do fornecedor
+        let card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <h3>${album.nome}</h3>
+            <a href="${album.link}" target="_blank">Ver no Yupoo</a>
+        `;
+        listaDiv.innerHTML += card.outerHTML;
     });
 }
 
-function mostrarClubes(indexLiga) {
-    listaDiv.innerHTML = '';
-    dados[indexLiga].clubes.forEach((clube, indexClube) => {
-        let btn = `<div class="card" onclick="mostrarFotos(${indexLiga}, ${indexClube})">${clube.nome}</div>`;
-        listaDiv.innerHTML += btn;
-    });
-}
-
-function mostrarFotos(indexLiga, indexClube) {
-    listaDiv.innerHTML = '';
-    const fotos = dados[indexLiga].clubes[indexClube].fotos;
-    fotos.forEach(foto => {
-        listaDiv.innerHTML += `<img src="${foto}" class="camisola">`;
-    });
-}
-
-function voltar() { mostrarLigas(); }
-
-mostrarLigas(); // Inicia o site
+carregarDados();
