@@ -16,10 +16,12 @@ jobs:
         run: pip install requests beautifulsoup4
       - name: Correr Robô
         run: python atualizar_catalogo.py
-           - name: Guardar Alterações
+             - name: Guardar Alterações
         run: |
           git config --global user.name 'Robo-Catalogo'
           git config --global user.email 'bot@github.com'
-          git add dados.json camisolas/*
-          git commit -m "Fotos e dados atualizados" || echo "Sem alterações"
+          git add dados.json
+          # O comando abaixo adiciona a pasta camisolas apenas se ela existir e tiver fotos
+          if [ -d "camisolas" ]; then git add camisolas/*; fi
+          git commit -m "Atualização automática de fotos e dados" || echo "Nada para atualizar"
           git push
