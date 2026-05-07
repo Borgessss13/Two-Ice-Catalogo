@@ -9,10 +9,16 @@ const baseDeDados = {
         { id: "slb", nome: "Benfica", foto: "fotos/benfica.png" }
     ],
     "portugal": [
-        { id: "pt_home", nome: "Portugal Principal 2026", foto: "camisolas/pthome26.jpg" },
-        { id: "pt_away", nome: "Portugal Away 2026", foto: "camisolas/ptaway26.jpg" },
-        { id: "pt_treino", nome: "Portugal Treino 2026", foto: "camisolas/pttrain26.png" },
-        { id: "pt_retro", nome: "Portugal Edição Retro", foto: "camisolas/ptretro2526.jpg" }
+        { id: "pt_home26", nome: "Portugal Principal 2026", foto: "camisolas/pthome26.jpg" },
+        { id: "pt_away26", nome: "Portugal Away 2026", foto: "camisolas/ptaway26.jpg" },
+        { id: "pt_treino26", nome: "Portugal Treino 2026", foto: "camisolas/pttrain26.png" },
+        { id: "pt_treino_camoflagem26", nome: "Portugal Treino Camuflagem  2026", foto: "camisolas/pttraincamo26.jpg" },
+        { id: "pt_away_mng_compr26", nome: "Portugal Away Manga Comprida 2026", foto: "camisolas/ptawaymngcomp26.png" },
+        { id: "pt_edit_aniver26", nome: "Portugal Edição Aniversário 2026", foto: "camisolas/pteditaniver26,png" },
+        { id: "pt_treino_sec26", nome: "Portugal Treino Secundária 2026", foto: "camisolas/pttreino226.png" },
+        { id: "pt_special26", nome: "Portugal Edição Especial 2026", foto: "camisolas/ptspecial26.jpg" },
+        { id: "pt_home24", nome: "Portugal Principar 2024", foto: "camisolas/pthome24.jpeg" },
+  
     ]
 };
 
