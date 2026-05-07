@@ -13,11 +13,11 @@ const menus = {
         { id: "italia", nome: "Itália", foto: "fotos/italia.png" }
     ],
     ligas: [
-        { id: "liga_pt", nome: "Liga Portugal", foto: "fotos/liga_pt.png" },
-        { id: "premier", nome: "Premier League", foto: "fotos/premier.png" },
-        { id: "laliga", nome: "La Liga", foto: "fotos/la_liga.png" },
-        { id: "serie_a", nome: "Serie A", foto: "fotos/serie_a.png" },
-        { id: "bundesliga", nome: "Bundesliga", foto: "fotos/bundesliga.png" },
+        { id: "liga_pt", nome: "Liga Portugal", foto: "fotos/ligaportugal.png" },
+        { id: "premier", nome: "Premier League", foto: "fotos/premierligue.jpg" },
+        { id: "laliga", nome: "La Liga", foto: "fotos/laliga.png" },
+        { id: "serie_a", nome: "Serie A", foto: "fotos/seriea.jpg" },
+        { id: "bundesliga", nome: "Bundesliga", foto: "fotos/bundesligue.png" },
         { id: "ligue1", nome: "Ligue 1", foto: "fotos/ligue1.png" },
         { id: "brasileirao", nome: "Brasileirão", foto: "fotos/brasileirao.png" },
         { id: "saudi", nome: "Saudi Pro League", foto: "fotos/saudi.png" }
