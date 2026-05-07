@@ -4,50 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Two Ice - Camisolas Premium</title>
+    <!-- Google Fonts para um aspeto mais profissional -->
+    <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- BOTÃO RETROCEDER -->
+    <!-- BOTÃO RETROCEDER (Aparece via JS quando entras numa liga) -->
     <button id="btn-retroceder" class="retroceder-fixo" onclick="mostrarHome()">✖ Sair</button>
 
-    <!-- SECÇÃO DE ENTRADA (Hero) - Ocupará a tela toda -->
-    <header class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('A_TUA_FOTO_AQUI.jpg');">
+    <!-- SECÇÃO PRINCIPAL (OCUPA A TELA TODA) -->
+    <header class="hero">
+        
+        <!-- Conteúdo Central: Logo e Chamada -->
         <div class="hero-content">
             <img src="logo.png" alt="Two Ice Logo" class="logo-top">
             <h1>Qualidade Premium ao Melhor Preço</h1>
             <p>As tuas camisolas favoritas de épocas clássicas e atuais.</p>
+            
+            <!-- Botão Transparente com Bordas -->
             <a href="#catalogo-section" class="btn-main">VER CATÁLOGO COMPLETO</a>
         </div>
-    </header>
 
-    <!-- 3 CAIXINHAS DE MOTIVOS -->
-    <section class="motivos">
-        <div class="motivo-card">
-            <span>⭐</span>
-            <h3>Qualidade Tailandesa</h3>
-            <p>Tecidos e bordados idênticos aos oficiais.</p>
+        <!-- As 3 Caixinhas de Motivos (No fundo da imagem) -->
+        <div class="motivos-hero">
+            <div class="motivo-card-hero">
+                <span>⭐</span>
+                <h3>Qualidade Tailandesa</h3>
+                <p>Tecidos e bordados idênticos.</p>
+            </div>
+            <div class="motivo-card-hero">
+                <span>🚀</span>
+                <h3>Envio Rápido</h3>
+                <p>Recebe com segurança.</p>
+            </div>
+            <div class="motivo-card-hero">
+                <span>🛡️</span>
+                <h3>Confiança</h3>
+                <p>Feedback de centenas de clientes.</p>
+            </div>
         </div>
-        <div class="motivo-card">
-            <span>🚀</span>
-            <h3>Envio Rápido</h3>
-            <p>Recebe a tua encomenda com toda a segurança.</p>
-        </div>
-        <div class="motivo-card">
-            <span>🛡️</span>
-            <h3>Confiança</h3>
-            <p>Feedback real de centenas de clientes.</p>
-        </div>
-    </section>
+
+    </header>
 
     <!-- SECÇÃO DO CATÁLOGO -->
     <section id="catalogo-section">
+        <!-- O Breadcrumb será gerado pelo JavaScript (Ex: Portugal > Principal) -->
         <div id="breadcrumb"></div>
-        <div id="lista">
-            <!-- O JavaScript vai colocar aqui as Seleções e Ligas -->
-        </div>
+        
+        <!-- Onde as camisolas e ligas vão aparecer dinamicamente -->
+        <div id="lista"></div>
     </section>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
