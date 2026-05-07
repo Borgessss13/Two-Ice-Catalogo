@@ -113,17 +113,46 @@ body {
     margin-top: 40px;
 }
 
+/* Ajuste dos Cards do Catálogo */
 .card {
     background: white;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 15px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: 0.3s;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 280px; /* Altura fixa para todos os cards ficarem iguais */
 }
 
-.card img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; }
+/* Tamanho das Imagens (Logos/Seleções) */
+.card img {
+    width: 100%;
+    height: 180px; /* Altura fixa para a imagem */
+    object-fit: contain; /* Garante que a imagem não estica e mantém a proporção */
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-top: auto; /* Empurra o texto para o fundo do card */
+}
+
+/* Grelha para suportar os cards maiores */
+.sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+    gap: 25px;
+    padding: 20px;
+}
+
 
 /* ============================================================
    RESPONSIVIDADE (TELEMÓVEL)
