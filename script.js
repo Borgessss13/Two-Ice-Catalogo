@@ -61,3 +61,53 @@ function irParaInstagram() {
 }
 
 carregarDados();
+const listaDiv = document.getElementById('lista');
+
+// ESTRUTURA DE DADOS (Exemplo de como deves preencher)
+const categorias = {
+    selecoes: [
+        { nome: "Portugal", foto: "fotos/portugal_logo.jpg", link: "LINK_YUPPO_PORTUGAL" },
+        { nome: "Brasil", foto: "fotos/brasil_logo.jpg", link: "LINK_YUPPO_BRASIL" },
+        { nome: "França", foto: "fotos/franca_logo.jpg", link: "LINK_YUPPO_FRANCA" }
+    ],
+    ligas: [
+        { nome: "Liga Portugal", foto: "fotos/liga_pt.jpg", link: "LINK_YUPPO_LIGA_PT" },
+        { nome: "Premier League", foto: "fotos/premier_league.jpg", link: "LINK_YUPPO_PREMIER" },
+        { nome: "La Liga", foto: "fotos/la_liga.jpg", link: "LINK_YUPPO_LALIGA" }
+    ]
+};
+
+function carregarHome() {
+    listaDiv.innerHTML = '';
+
+    // SECÇÃO SELECÇÕES
+    listaDiv.innerHTML += '<h2 class="section-title">Seleções</h2>';
+    let gridSelecoes = '<div class="sub-grid">';
+    categorias.selecoes.forEach(item => {
+        gridSelecoes += criarCard(item);
+    });
+    gridSelecoes += '</div>';
+    listaDiv.innerHTML += gridSelecoes;
+
+    // SECÇÃO LIGAS
+    listaDiv.innerHTML += '<h2 class="section-title">Ligas</h2>';
+    let gridLigas = '<div class="sub-grid">';
+    categorias.ligas.forEach(item => {
+        gridLigas += criarCard(item);
+    });
+    gridLigas += '</div>';
+    listaDiv.innerHTML += gridLigas;
+}
+
+function criarCard(item) {
+    return `
+        <div class="card" onclick="window.open('${item.link}', '_blank')">
+            <img src="${item.foto}" alt="${item.nome}">
+            <h3>${item.nome}</h3>
+        </div>
+    `;
+}
+
+// Inicia o site
+carregarHome();
+
