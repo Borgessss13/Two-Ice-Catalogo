@@ -105,3 +105,11 @@ function verCamisolas(idAlvo, nomeAlvo) {
 window.onload = function() {
     mostrarHome();
 };
+
+// Este código força o catálogo a aparecer mal o site abre
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', mostrarHome);
+} else {
+    mostrarHome();
+}
+
