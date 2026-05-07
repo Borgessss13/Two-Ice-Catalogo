@@ -1,44 +1,50 @@
 import requests
-from bs4 import BeautifulSoup
+import os
 import json
-import sys
+from bs4 import BeautifulSoup
 
 URL_YUPOO = "https://yupoo.com"
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
-}
+HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
 
-def buscar_dados():
-    try:
-        response = requests.get(URL_YUPOO, headers=headers, timeout=30)
-        response.raise_for_status()
-        
-        soup = BeautifulSoup(response.text, 'html.parser')
-        albuns = []
-        
-        # Procura os itens do álbum na estrutura do Yupoo
-        items = soup.find_all('div', class_='show_item')
-        if not items:
-            print("Aviso: Nenhum álbum encontrado. Verifique se o link mudou.")
-        
-        for item in items:
-            a_tag = item.find('a')
-            if a_tag:
-                titulo = a_tag.get('title', 'Sem Nome')
-                link = "https:" + a_tag.get('href', '')
-                albuns.append({"nome": titulo, "link": link})
-        
-        with open('dados.json', 'w', encoding='utf-8') as f:
-            json.dump(albuns, f, indent=4, ensure_ascii=False)
-        
-        print(f"Sucesso! {len(albuns)} álbuns encontrados.")
+def baixar_imagem(url, titulo):
+    if not os.path.exists('camisolas'):
+        os.makedirs('camisolas')
+    
+    # Cria um nome de ficheiro limpo
+    nome_limpo = "".join([c for c in titulo if c.isalnum()]).rstrip()
+    caminho = f"camisolas/{nome_limpo}.jpg"
+    
+    if not os.path.exists(caminho):
+        try:
+            img_data = requests.get(url, headers=HEADERS, timeout=15).content
+            with open(caminho, 'wb') as f:
+                f.write(img_data)
+            return caminho
+        except:
+            return ""
+    return caminho
 
-    except Exception as e:
-        print(f"Erro fatal: {e}")
-        # Criamos um ficheiro vazio para o site não crashar
-        with open('dados.json', 'w') as f:
-            json.dump([], f)
-        sys.exit(0) # Força o sucesso para não dar bola vermelha
+def robot():
+    res = requests.get(URL_YUPOO, headers=HEADERS)
+    soup = BeautifulSoup(res.text, 'html.parser')
+    albuns = soup.find_all('div', class_='show_item')[:15] # Baixa as primeiras 15
+    
+    dados_finais = []
+    for a in albuns:
+        link_tag = a.find('a', class_='album__main')
+        img_tag = a.find('img')
+        
+        if link_tag and img_tag:
+            titulo = link_tag.get('title')
+            # Pega a foto e transforma o link pequeno em link médio/grande
+            img_url = "https:" + img_tag.get('data-src', img_tag.get('src')).replace('small', 'medium')
+            
+            caminho_local = baixar_imagem(img_url, titulo)
+            if caminho_local:
+                dados_finais.append({"nome": titulo, "foto": caminho_local})
+
+    with open('dados.json', 'w', encoding='utf-8') as f:
+        json.dump(dados_finais, f, indent=4)
 
 if __name__ == "__main__":
-    buscar_dados()
+    robot()
