@@ -3,16 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Catálogo</title>
+    <title>Two Ice - Camisolas Premium</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
-        <h1>Meu Catálogo</h1>
-        <div id="lista" class="grid">
-            <p>A carregar camisolas...</p>
+
+    <!-- SECÇÃO DE ENTRADA -->
+    <header class="hero">
+        <img src="logo.png" alt="Two Ice Logo" class="logo-top"> <!-- Se não tiveres logo, ele ignora -->
+        <h1>Qualidade Premium ao Melhor Preço</h1>
+        <p>As tuas camisolas favoritas de épocas clássicas e atuais.</p>
+        
+        <!-- BOTÃO CATÁLOGO -->
+        <a href="#catalogo-section" class="btn-main">VER CATÁLOGO COMPLETO</a>
+    </header>
+
+    <!-- 3 CAIXINHAS DE MOTIVOS -->
+    <section class="motivos">
+        <div class="motivo-card">
+            <span>⭐</span>
+            <h3>Qualidade Tailandesa</h3>
+            <p>Tecidos e bordados idênticos aos oficiais.</p>
         </div>
-    </div>
+        <div class="motivo-card">
+            <span>🚀</span>
+            <h3>Envio Rápido</h3>
+            <p>Recebe a tua encomenda com toda a segurança.</p>
+        </div>
+        <div class="motivo-card">
+            <span>🛡️</span>
+            <h3>Confiança</h3>
+            <p>Feedback real de centenas de clientes.</p>
+        </div>
+    </section>
+
+    <!-- SECÇÃO DO CATÁLOGO (Onde o JS vai trabalhar) -->
+    <section id="catalogo-section">
+        <h2 style="text-align:center;">Selecções e Ligas</h2>
+        <div id="breadcrumb"></div>
+        <div id="lista" class="grid">
+            <!-- As camisolas e ligas vão aparecer aqui via JS -->
+        </div>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>
