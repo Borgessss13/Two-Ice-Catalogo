@@ -8,13 +8,14 @@
 </head>
 <body>
 
+    <!-- BOTÃO RETROCEDER (Aparece apenas dentro das ligas) -->
+    <button id="btn-retroceder" class="retroceder-fixo" onclick="mostrarHome()">✖ Sair</button>
+
     <!-- SECÇÃO DE ENTRADA -->
     <header class="hero">
-        <img src="logo.png" alt="Two Ice Logo" class="logo-top"> <!-- Se não tiveres logo, ele ignora -->
+        <img src="logo.png" alt="Two Ice Logo" class="logo-top">
         <h1>Qualidade Premium ao Melhor Preço</h1>
         <p>As tuas camisolas favoritas de épocas clássicas e atuais.</p>
-        
-        <!-- BOTÃO CATÁLOGO -->
         <a href="#catalogo-section" class="btn-main">VER CATÁLOGO COMPLETO</a>
     </header>
 
@@ -37,14 +38,11 @@
         </div>
     </section>
 
-    <!-- SECÇÃO DO CATÁLOGO (Onde o JS vai trabalhar) -->
- <section id="catalogo-section">
-    <div id="breadcrumb"></div>
-    <div id="lista"></div>
-</section>
-
-
-            <!-- As camisolas e ligas vão aparecer aqui via JS -->
+    <!-- SECÇÃO DO CATÁLOGO -->
+    <section id="catalogo-section">
+        <div id="breadcrumb"></div>
+        <div id="lista">
+            <!-- O JavaScript vai colocar aqui as Seleções e Ligas -->
         </div>
     </section>
 
