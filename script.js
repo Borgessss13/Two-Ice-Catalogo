@@ -11,7 +11,7 @@ const baseDeDados = {
     "portugal": [
         { id: "pt_home", nome: "Portugal Principal 2026", foto: "pthome26.jpg" },
         { id: "pt_away", nome: "Portugal Away 2026", foto: "ptaway26.jpg" },
-        { id: "pt_treino", nome: "Portugal Treino 2026", foto: "pttreino2526.jpg" },
+        { id: "pt_treino", nome: "Portugal Treino 2026", foto: "pttrain26.png" },
         { id: "pt_retro", nome: "Portugal Edição Retro", foto: "ptretro2526.jpg" }
     ]
 };
