@@ -13,9 +13,9 @@ const baseDeDados = {
         { id: "pt_away26", nome: "Portugal Away 2026", foto: "camisolas/ptaway26.jpg" },
         { id: "pt_treino26", nome: "Portugal Treino 2026", foto: "camisolas/pttrain26.png" },
         { id: "pt_treino_camoflagem26", nome: "Portugal Treino Camuflagem  2026", foto: "camisolas/pttraincamo26.jpg" },
-        { id: "pt_away_mng_compr26", nome: "Portugal Away Manga Comprida 2026", foto: "camisolas/ptawaymngcomp26.png" },
-        { id: "pt_edit_aniver26", nome: "Portugal Edição Aniversário 2026", foto: "camisolas/pteditaniver26,png" },
-        { id: "pt_treino_sec26", nome: "Portugal Treino Secundária 2026", foto: "camisolas/pttreino226.png" },
+        { id: "pt_away_mng_compr26", nome: "Portugal Away Manga Comprida 2026", foto: "camisolas/ptaaymngcomp26.png" },
+        { id: "pt_edit_aniver26", nome: "Portugal Edição Aniversário 2026", foto: "camisolas/pteditaniver26.png" },
+        { id: "pt_treino_sec26", nome: "Portugal Treino Secundária 2026", foto: "camisolas/pttrain226.png" },
         { id: "pt_special26", nome: "Portugal Edição Especial 2026", foto: "camisolas/ptspecial26.jpg" },
         { id: "pt_home24", nome: "Portugal Principar 2024", foto: "camisolas/pthome24.jpeg" },
   
