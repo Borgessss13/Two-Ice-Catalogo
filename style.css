@@ -17,7 +17,7 @@ body {
     /* ... outras configurações ... */
     
     /* TROCA AQUI: Substitui 'A_TUA_FOTO_AQUI.jpg' pelo nome do teu ficheiro */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('paginainicial.jpg');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://unsplash.com');
     
     background-size: cover;
     background-position: center;
