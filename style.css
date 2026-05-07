@@ -193,4 +193,41 @@ body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #333; scrol
     margin: 0 auto; /* Centra as imagens por baixo do título */
 }
 
+/* Estilo dos Cards de Categorias (Seleções e Ligas) */
+.card {
+    display: flex;
+    flex-direction: column; /* Coloca a imagem em cima e o texto em baixo */
+    align-items: center;    /* Centra horizontalmente o conteúdo do card */
+    justify-content: center;
+    text-align: center;      /* Centra o texto do h3 */
+    padding: 15px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de flutuar ao passar o rato */
+}
+
+.card img {
+    width: 80%;             /* Tamanho do logo dentro do card */
+    max-width: 120px;       /* Não deixa o logo ficar gigante */
+    height: auto;
+    aspect-ratio: 1/1;      /* Mantém o logo num espaço quadrado */
+    object-fit: contain;    /* Garante que o logo não fica cortado ou esticado */
+    margin-bottom: 10px;    /* Espaço entre a foto e o nome */
+}
+
+.card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    text-transform: capitalize; /* Garante que a primeira letra é maiúscula */
+}
+
+
 
