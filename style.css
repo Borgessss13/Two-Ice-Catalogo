@@ -14,23 +14,23 @@ body {
    SECÇÃO HERO (IMAGEM TOTAL)
    ============================================================ */
 .hero {
-    /* ... outras configurações ... */
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
     
-    /* TROCA AQUI: Substitui 'A_TUA_FOTO_AQUI.jpg' pelo nome do teu ficheiro */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('fundo1.png');
-    
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-    /* CAMADA DE FUNDO: Cor preta base + Imagem com Filtro Escuro */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('fundo1.png');
+    /* CAMADA DE FUNDO: Filtro escuro + a tua foto */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('fundo2.png');
     background-color: #000; 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Efeito de profundidade ao fazer scroll */
+    background-attachment: fixed;
 }
 
 .hero-content {
@@ -40,8 +40,8 @@ body {
 }
 
 .logo-top { 
-    width: 140px; 
-    margin-bottom: 20px; 
+    width: 150px; 
+    margin-bottom: 25px; 
     filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
 }
 
@@ -49,13 +49,13 @@ body {
 .hero p { font-size: 1.2rem; opacity: 0.9; }
 
 /* ============================================================
-   BOTÃO "VER CATÁLOGO" (TRANSPARENTE COM BORDAS)
+   BOTÃO TRANSPARENTE COM BORDAS
    ============================================================ */
 .btn-main {
     background: transparent;
     color: #fff;
     padding: 15px 40px;
-    border: 2px solid #fff; /* Borda branca bem definida */
+    border: 2px solid #fff;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
@@ -70,25 +70,21 @@ body {
     background: #fff;
     color: #000;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(255,255,255,0.2);
 }
 
-/* ============================================================
-   CAIXINHAS DE MOTIVOS (POSIÇÃO FUNDO + EFEITO VIDRO)
-   ============================================================ */
 /* ============================================================
    CAIXINHAS ESPALHADAS (ESQUERDA, CENTRO, DIREITA)
    ============================================================ */
 .motivos-hero {
     position: absolute;
-    bottom: 40px; /* Distância do fundo */
+    bottom: 40px;
     left: 50%;
-    transform: translateX(-50%); /* Centra o grupo todo no ecrã */
+    transform: translateX(-50%);
     display: flex;
-    justify-content: space-between; /* Espalha: uma em cada ponta e uma no meio */
+    justify-content: space-between;
     align-items: center;
-    width: 90%; /* Ocupa 90% da largura para não colarem totalmente aos bordos */
-    max-width: 1300px; /* Limite para ecrãs muito grandes não ficarem demasiado longe */
+    width: 90%;
+    max-width: 1300px;
     z-index: 2;
 }
 
@@ -100,25 +96,9 @@ body {
     padding: 20px;
     border-radius: 15px;
     text-align: center;
-    width: 30%; /* Cada caixa ocupa cerca de 1/3 do espaço */
+    width: 30%;
     color: white;
     transition: 0.3s;
-}
-
-/* Ajuste para Telemóvel (No telemóvel devem ficar em lista para caberem) */
-@media (max-width: 768px) {
-    .motivos-hero { 
-        position: relative; 
-        bottom: 0; 
-        flex-direction: column; 
-        gap: 15px;
-        width: 100%;
-        margin-top: 50px; 
-    }
-    
-    .motivo-card-hero { 
-        width: 90%; /* No telemóvel ocupam a largura quase toda */
-    }
 }
 
 /* ============================================================
@@ -133,7 +113,6 @@ body {
     margin-top: 40px;
 }
 
-/* CARDS DAS CAMISOLAS */
 .card {
     background: white;
     padding: 20px;
@@ -144,7 +123,6 @@ body {
     cursor: pointer;
 }
 
-.card:hover { transform: translateY(-10px); }
 .card img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; }
 
 /* ============================================================
@@ -158,13 +136,14 @@ body {
         position: relative; 
         bottom: 0; 
         flex-direction: column; 
+        gap: 15px;
+        width: 100%;
         margin-top: 50px; 
     }
     
-    .motivo-card-hero { width: 100%; }
+    .motivo-card-hero { width: 90%; }
 }
 
-/* BOTÃO RETROCEDER FIXO */
 .retroceder-fixo {
     position: fixed;
     top: 20px;
@@ -176,260 +155,5 @@ body {
     padding: 10px 20px;
     border-radius: 30px;
     cursor: pointer;
-    display: none; /* Mostrado via JS */
+    display: none;
 }
-/* Reset e Base */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #333; scroll-behavior: smooth; }
-
-/* Topo do Site (Hero) - Ocupa a tela toda */
-.hero {
-    width: 100%;
-    height: 100vh; /* Ocupa 100% da altura da janela */
-    background-color: #000; /* Fundo preto enquanto não há foto */
-    color: white;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra verticalmente */
-    align-items: center;     /* Centra horizontalmente */
-    padding: 20px;
-    
-    /* Configuração para a futura imagem */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Opcional: dá um efeito 'parallax' elegante */
-}
-
-/* Garante que o conteúdo dentro do hero não fique colado aos bordos */
-.hero-content {
-    max-width: 800px;
-}
-
-.logo-top { 
-    width: 150px; /* Aumentei um pouco para ter mais destaque */
-    margin-bottom: 25px; 
-}
-
-
-.btn-main:hover { transform: translateY(-5px); background: #eee; }
-
-/* As 3 Caixinhas de Motivos */
-.motivos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px 20px;
-    margin-top: -30px; /* Faz as caixas subirem um pouco */
-}
-
-.motivo-card {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    width: 30%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-.motivo-card span { font-size: 30px; display: block; margin-bottom: 10px; }
-.motivo-card h3 { font-size: 16px; margin-bottom: 5px; }
-.motivo-card p { font-size: 13px; color: #777; }
-
-/* Responsividade para Telemóvel */
-@media (max-width: 768px) {
-    .motivos { flex-direction: column; align-items: center; margin-top: 10px; }
-    .motivo-card { width: 90%; }
-    .hero h1 { font-size: 24px; }
-}
-
-/* Grelha do Catálogo */
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; padding: 20px; }
-/* Títulos das Secções */
-.section-title {
-    width: 100%;
-    text-align: left;
-    padding: 20px 0 10px 20px;
-    font-size: 24px;
-    color: #000;
-    border-bottom: 2px solid #eee;
-    margin-bottom: 20px;
-}
-
-/* Grelha interna */
-.sub-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 15px;
-    padding: 20px;
-    width: 100%;
-}
-
-/* Ajuste das imagens nos cards */
-.card img {
-    width: 100%;
-    height: 150px;
-    object-fit: contain; /* Garante que os logos não fiquem cortados */
-    background: #fff;
-    padding: 10px;
-}
-
-/* Telemóvel */
-@media (max-width: 600px) {
-    .sub-grid { grid-template-columns: repeat(2, 1fr); }
-    .section-title { font-size: 20px; }
-}
-.btn-voltar {
-    background: #000;
-    color: #fff;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 20px;
-    font-weight: bold;
-}
-
-.path { font-weight: bold; color: #555; }
-/* Centrar os títulos das secções */
-.section-title {
-    width: 100%;
-    text-align: center; /* Centra o texto */
-    padding: 30px 0 10px 0; /* Espaçamento superior e inferior */
-    font-size: 28px;
-    color: #000;
-    text-transform: uppercase; /* Opcional: deixa em maiúsculas para dar destaque */
-    letter-spacing: 2px; /* Espaço entre letras para um look mais premium */
-    margin-bottom: 20px;
-    border-bottom: None; /* Remove a linha lateral se existia */
-}
-
-/* Garante que as grelhas por baixo também estão alinhadas */
-.sub-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto; /* Centra a grelha inteira no ecrã */
-}
-
-/* Garante que o container do título ocupa a largura toda e centra o conteúdo */
-.titulo-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    clear: both;
-    margin-top: 40px;
-}
-
-.section-title {
-    text-align: center !important;
-    width: auto;
-    display: inline-block;
-    font-size: 26px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 3px solid #000; /* Dá um detalhe elegante por baixo do título */
-    padding-bottom: 5px;
-}
-
-/* Ajuste da Grelha para não "subir" para o lado do título */
-.sub-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-#lista {
-    width: 100%;
-    display: block;
-}
-
-.titulo-container {
-    width: 100%;
-    text-align: center;
-    margin: 50px 0 20px 0; /* Dá espaço entre as secções */
-    display: block;
-}
-
-.section-title {
-    display: inline-block;
-    font-size: 28px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    border-bottom: 3px solid #000;
-    padding-bottom: 8px;
-}
-
-.sub-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 25px;
-    padding: 20px;
-    max-width: 1100px;
-    margin: 0 auto; /* Centra as imagens por baixo do título */
-}
-
-/* Estilo dos Cards de Categorias (Seleções e Ligas) */
-.card {
-    display: flex;
-    flex-direction: column; /* Coloca a imagem em cima e o texto em baixo */
-    align-items: center;    /* Centra horizontalmente o conteúdo do card */
-    justify-content: center;
-    text-align: center;      /* Centra o texto do h3 */
-    padding: 15px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.card:hover {
-    transform: translateY(-5px); /* Efeito de flutuar ao passar o rato */
-}
-
-.card img {
-    width: 80%;             /* Tamanho do logo dentro do card */
-    max-width: 120px;       /* Não deixa o logo ficar gigante */
-    height: auto;
-    aspect-ratio: 1/1;      /* Mantém o logo num espaço quadrado */
-    object-fit: contain;    /* Garante que o logo não fica cortado ou esticado */
-    margin-bottom: 10px;    /* Espaço entre a foto e o nome */
-}
-
-.card h3 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-    margin: 0;
-    text-transform: capitalize; /* Garante que a primeira letra é maiúscula */
-}
-
-
-/* Assume que a tua secção preta tem uma classe como .hero ou .header-section */
-.hero-section {
-    width: 100%;
-    min-height: 100vh; /* Ocupa 100% da altura da janela */
-    background-color: #000; /* Cor preta original */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    
-    /* Configuração para a futura imagem */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
