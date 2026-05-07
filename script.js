@@ -4,7 +4,7 @@ const listaDiv = document.getElementById('lista');
 const baseDeDados = {
     "liga_pt": [
         { id: "scp", nome: "Sporting", foto: "fotos/sporting.png" },
-        { id: "fcp", nome: "FC Porto", foto: "fotos/porto.png" },
+        { id: "fcp", nome: "FC Porto", foto: "fotos/porto.jpg" },
         { id: "slb", nome: "Benfica", foto: "fotos/benfica.png" }
     ],
     "portugal": [
