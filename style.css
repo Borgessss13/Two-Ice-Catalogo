@@ -17,7 +17,7 @@ body {
     /* ... outras configurações ... */
     
     /* TROCA AQUI: Substitui 'A_TUA_FOTO_AQUI.jpg' pelo nome do teu ficheiro */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://unsplash.com');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('fundo1.png');
     
     background-size: cover;
     background-position: center;
@@ -25,7 +25,7 @@ body {
 }
 
     /* CAMADA DE FUNDO: Cor preta base + Imagem com Filtro Escuro */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('fundo.png');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('fundo1.png');
     background-color: #000; 
     background-size: cover;
     background-position: center;
