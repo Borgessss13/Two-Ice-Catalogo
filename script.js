@@ -1,6 +1,20 @@
 const listaDiv = document.getElementById('lista');
 
-// 1. DADOS DAS CATEGORIAS (Seleções e Ligas)
+// 1. BASE DE DADOS DOS CLUBES (Organizado por ID da Liga/Seleção)
+const baseDeDados = {
+    "liga_pt": [
+        { id: "slb", nome: "Benfica", foto: "fotos/benfica.png" },
+        { id: "scp", nome: "Sporting", foto: "fotos/sporting.png" },
+        { id: "fcp", nome: "FC Porto", foto: "fotos/porto.png" }
+    ],
+    "portugal": [
+        { id: "pt_home", nome: "Portugal Principal", foto: "camisolas/portugal_home.jpg" },
+        { id: "pt_away", nome: "Portugal Alternativa", foto: "camisolas/portugal_away.jpg" }
+    ]
+    // Podes adicionar "premier": [ ... ] no futuro aqui
+};
+
+// 2. MENUS PRINCIPAIS (O que aparece na Home - Mantive os teus nomes de ficheiros exatos)
 const menus = {
     selecoes: [
         { id: "portugal", nome: "Portugal", foto: "fotos/portugal.png" },
@@ -24,15 +38,6 @@ const menus = {
     ]
 };
 
-// 2. FUNÇÃO PARA CRIAR OS CARDS
-function criarCardCategoria(item) {
-    return `
-        <div class="card" onclick="verCamisolas('${item.id}', '${item.nome}')">
-            <img src="${item.foto}" alt="${item.nome}" onerror="this.src='https://placehold.co'">
-            <h3>${item.nome}</h3>
-        </div>`;
-}
-
 // 3. FUNÇÃO PARA MOSTRAR A HOME
 function mostrarHome() {
     const btnRetro = document.getElementById('btn-retroceder');
@@ -41,38 +46,62 @@ function mostrarHome() {
     listaDiv.innerHTML = '';
 
     // Bloco Seleções
-    let htmlSelecoes = `<div class="titulo-container"><h2 class="section-title">Seleções</h2></div>
-                        <div class="sub-grid">`;
-    menus.selecoes.forEach(item => {
-        htmlSelecoes += criarCardCategoria(item);
-    });
-    htmlSelecoes += '</div>';
-    listaDiv.innerHTML += htmlSelecoes;
+    listaDiv.innerHTML += '<div class="titulo-container"><h2 class="section-title">Seleções</h2></div>';
+    let gridSel = '<div class="sub-grid">';
+    menus.selecoes.forEach(item => gridSel += criarCard(item, 'verSubCategoria'));
+    gridSel += '</div>';
+    listaDiv.innerHTML += gridSel;
 
     // Bloco Ligas
-    let htmlLigas = `<div class="titulo-container"><h2 class="section-title">Ligas</h2></div>
-                     <div class="sub-grid">`;
-    menus.ligas.forEach(item => {
-        htmlLigas += criarCardCategoria(item);
-    });
-    htmlLigas += '</div>';
-    listaDiv.innerHTML += htmlLigas;
+    listaDiv.innerHTML += '<div class="titulo-container"><h2 class="section-title">Ligas</h2></div>';
+    let gridLig = '<div class="sub-grid">';
+    menus.ligas.forEach(item => gridLig += criarCard(item, 'verSubCategoria'));
+    gridLig += '</div>';
+    listaDiv.innerHTML += gridLig;
 }
 
-// 4. FUNÇÃO PARA VER CAMISOLAS (Interior da Liga/Seleção)
-function verCamisolas(id, nome) {
+// 4. FUNÇÃO PARA VER CLUBES OU CAMISOLAS DE SELEÇÃO
+function verSubCategoria(id, nome) {
     const btnRetro = document.getElementById('btn-retroceder');
     if (btnRetro) btnRetro.style.display = 'block';
     
-    listaDiv.innerHTML = `
-        <div class="titulo-container"><h2 class="section-title">${nome}</h2></div>
-        <p style="text-align:center; padding:20px;">A carregar camisolas de ${nome}...</p>
-    `;
+    listaDiv.innerHTML = `<div class="titulo-container"><h2 class="section-title">${nome}</h2></div>`;
     
-    // Aqui no futuro o robô vai injetar as fotos das camisolas filtrando pelo ID
+    const itens = baseDeDados[id];
+
+    if (!itens) {
+        listaDiv.innerHTML += `<p style="text-align:center; padding:20px;">Catálogo de ${nome} brevemente disponível.</p>`;
+        return;
+    }
+
+    let gridItens = '<div class="sub-grid">';
+    itens.forEach(item => {
+        // Se for clube, ao clicar vai para verCamisolas. Se já for camisola, podes ajustar aqui.
+        gridItens += criarCard(item, 'verDetalhesFinal');
+    });
+    gridItens += '</div>';
+    listaDiv.innerHTML += gridItens;
 }
 
-// 5. GATILHO DE INICIALIZAÇÃO
-document.addEventListener('DOMContentLoaded', function() {
-    mostrarHome();
-});
+// 5. FUNÇÃO FINAL (MOSTRAR CAMISOLA OU IR PARA INSTAGRAM)
+function verDetalhesFinal(id, nome) {
+    listaDiv.innerHTML = `
+        <div class="titulo-container"><h2 class="section-title">${nome}</h2></div>
+        <div style="text-align:center; padding:20px;">
+            <p>Interessado na camisola do ${nome}?</p>
+            <button class="btn-insta" onclick="window.open('https://instagram.com', '_blank')">CONSULTAR NO INSTAGRAM</button>
+        </div>
+    `;
+}
+
+// AUXILIAR: Cria os cards de forma limpa
+function criarCard(item, funcaoClique) {
+    return `
+        <div class="card" onclick="${funcaoClique}('${item.id}', '${item.nome}')">
+            <img src="${item.foto}" alt="${item.nome}" onerror="this.src='https://placehold.co'">
+            <h3>${item.nome}</h3>
+        </div>`;
+}
+
+// GATILHO DE INICIALIZAÇÃO
+document.addEventListener('DOMContentLoaded', mostrarHome);
