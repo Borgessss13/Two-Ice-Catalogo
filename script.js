@@ -5,10 +5,10 @@ const menus = {
     selecoes: [
         { id: "portugal", nome: "Portugal", foto: "fotos/portugal.png" },
         { id: "brasil", nome: "Brasil", foto: "fotos/brasil.png" },
-        { id: "inglaterra", nome: "Inglaterra", foto: "fotos/inglaterra.png" },
+        { id: "inglaterra", nome: "Inglaterra", foto: "fotos/inglaterra1.png" },
         { id: "franca", nome: "França", foto: "fotos/franca.jpeg" },
         { id: "argentina", nome: "Argentina", foto: "fotos/argentina.png" },
-        { id: "alemanha", nome: "Alemanha", foto: "fotos/alemanha.png" },
+        { id: "alemanha", nome: "Alemanha", foto: "fotos/alemanha1.jpg" },
         { id: "espanha", nome: "Espanha", foto: "fotos/espanha.png" },
         { id: "italia", nome: "Itália", foto: "fotos/italia.png" }
     ],
