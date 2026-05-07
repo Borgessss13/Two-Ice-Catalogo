@@ -1,3 +1,171 @@
+/* ============================================================
+   RESET E BASE
+   ============================================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background: #f9f9f9; 
+    color: #333; 
+    scroll-behavior: smooth; 
+}
+
+/* ============================================================
+   SECÇÃO HERO (IMAGEM TOTAL)
+   ============================================================ */
+.hero {
+    width: 100%;
+    height: 100vh; /* Ocupa a tela inteira */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra o conteúdo no meio */
+    align-items: center;
+    text-align: center;
+    color: white;
+    
+    /* CAMADA DE FUNDO: Cor preta base + Imagem com Filtro Escuro */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('A_TUA_FOTO_AQUI.jpg');
+    background-color: #000; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Efeito de profundidade ao fazer scroll */
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+    z-index: 2;
+}
+
+.logo-top { 
+    width: 140px; 
+    margin-bottom: 20px; 
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+}
+
+.hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 10px; }
+.hero p { font-size: 1.2rem; opacity: 0.9; }
+
+/* ============================================================
+   BOTÃO "VER CATÁLOGO" (TRANSPARENTE COM BORDAS)
+   ============================================================ */
+.btn-main {
+    background: transparent;
+    color: #fff;
+    padding: 15px 40px;
+    border: 2px solid #fff; /* Borda branca bem definida */
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 35px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-main:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+}
+
+/* ============================================================
+   CAIXINHAS DE MOTIVOS (POSIÇÃO FUNDO + EFEITO VIDRO)
+   ============================================================ */
+.motivos-hero {
+    position: absolute;
+    bottom: 40px; /* Coloca no fundo do ecrã */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.motivo-card-hero {
+    background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+    backdrop-filter: blur(12px); /* Efeito de vidro desfocado */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda fina discreta */
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+    transition: 0.3s;
+}
+
+.motivo-card-hero:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.motivo-card-hero span { font-size: 28px; display: block; margin-bottom: 8px; }
+.motivo-card-hero h3 { font-size: 15px; text-transform: uppercase; letter-spacing: 1px; }
+.motivo-card-hero p { font-size: 12px; opacity: 0.7; margin-top: 5px; }
+
+/* ============================================================
+   CATÁLOGO E GRELHAS
+   ============================================================ */
+#catalogo-section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+
+.sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* CARDS DAS CAMISOLAS */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card:hover { transform: translateY(-10px); }
+.card img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; }
+
+/* ============================================================
+   RESPONSIVIDADE (TELEMÓVEL)
+   ============================================================ */
+@media (max-width: 768px) {
+    .hero { height: auto; min-height: 100vh; padding: 100px 20px; }
+    .hero h1 { font-size: 2rem; }
+    
+    .motivos-hero { 
+        position: relative; 
+        bottom: 0; 
+        flex-direction: column; 
+        margin-top: 50px; 
+    }
+    
+    .motivo-card-hero { width: 100%; }
+}
+
+/* BOTÃO RETROCEDER FIXO */
+.retroceder-fixo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    display: none; /* Mostrado via JS */
+}
 /* Reset e Base */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #333; scroll-behavior: smooth; }
