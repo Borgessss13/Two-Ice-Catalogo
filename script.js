@@ -101,4 +101,7 @@ function verCamisolas(idAlvo, nomeAlvo) {
     listaDiv.innerHTML += gridCamisolas;
 }
 
-mostrarHome();
+// Garante que o catálogo carrega assim que a página abre
+window.onload = function() {
+    mostrarHome();
+};
