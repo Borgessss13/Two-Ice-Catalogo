@@ -19,7 +19,7 @@ const menus = {
         { id: "serie_a", nome: "Serie A", foto: "fotos/seriea.jpg" },
         { id: "bundesliga", nome: "Bundesliga", foto: "fotos/bundesligue.png" },
         { id: "ligue1", nome: "Ligue 1", foto: "fotos/ligue1.png" },
-        { id: "brasileirao", nome: "Brasileirão", foto: "fotos/brasileirao.jpg" },
+        { id: "brasileirao", nome: "Brasileirão", foto: "fotos/brasileirao1.png" },
         { id: "saudi", nome: "Saudi Pro League", foto: "fotos/saudi.png" }
     ]
 };
