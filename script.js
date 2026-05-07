@@ -24,15 +24,30 @@ const menus = {
 
 // FUNÇÃO PARA MOSTRAR A HOME (SELEÇÕES E LIGAS)
 function mostrarHome() {
+    document.getElementById('btn-retroceder').style.display = 'none';
     listaDiv.innerHTML = '';
-    breadcrumb.innerHTML = ''; // Limpa o botão voltar na home
 
-    // Renderizar Seleções
-    listaDiv.innerHTML += '<h2 class="section-title">Seleções</h2><div class="sub-grid" id="grid-selecoes"></div>';
-    const gridSel = document.getElementById('grid-selecoes');
+    // --- SECÇÃO SELECÇÕES ---
+    listaDiv.innerHTML += '<div class="titulo-container"><h2 class="section-title">Seleções</h2></div>';
+    
+    let gridSelecoes = '<div class="sub-grid">';
     menus.selecoes.forEach(item => {
-        gridSel.innerHTML += criarCardCategoria(item);
+        gridSelecoes += criarCardCategoria(item);
     });
+    gridSelecoes += '</div>';
+    listaDiv.innerHTML += gridSelecoes;
+
+    // --- SECÇÃO LIGAS ---
+    listaDiv.innerHTML += '<div class="titulo-container"><h2 class="section-title">Ligas</h2></div>';
+    
+    let gridLigas = '<div class="sub-grid">';
+    menus.ligas.forEach(item => {
+        gridLigas += criarCardCategoria(item);
+    });
+    gridLigas += '</div>';
+    listaDiv.innerHTML += gridLigas;
+}
+
 
     // Renderizar Ligas
     listaDiv.innerHTML += '<h2 class="section-title">Ligas</h2><div class="sub-grid" id="grid-ligas"></div>';
