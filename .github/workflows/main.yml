@@ -1,7 +1,5 @@
 name: Atualizar Site Automaticamente
 on:
-  schedule:
-    - cron: '0 0 * * *'
   workflow_dispatch:
 
 permissions:
@@ -11,17 +9,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Instalar Python
-        run: pip install requests beautifulsoup4
-      - name: Correr Robô
-        run: python atualizar_catalogo.py
-             - name: Guardar Alterações
+      - uses: actions/checkout@v4
+      
+      - name: Instalar Python e Bibliotecas
         run: |
-          git config --global user.name 'Robo-Catalogo'
-          git config --global user.email 'bot@github.com'
-          git add dados.json
-          # O comando abaixo adiciona a pasta camisolas apenas se ela existir e tiver fotos
-          if [ -d "camisolas" ]; then git add camisolas/*; fi
-          git commit -m "Atualização automática de fotos e dados" || echo "Nada para atualizar"
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+          
+      - name: Correr Robô (Baixar Fotos)
+        run: python atualizar_catalogo.py
+        
+      - name: Guardar Alterações no GitHub
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@://github.com'
+          git add dados.json camisolas/
+          git commit -m "Catálogo e Fotos Atualizados" || echo "Sem alterações"
           git push
