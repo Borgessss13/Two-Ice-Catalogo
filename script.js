@@ -4,7 +4,7 @@ const listaDiv = document.getElementById('lista');
 const menus = {
     selecoes: [
         { id: "portugal", nome: "Portugal", foto: "fotos/portugal.png" },
-        { id: "brasil", nome: "Brasil", foto: "fotos/brasil.png" }
+        { id: "brasil", nome: "Brasil", foto: "fotos/brasil.png" },
         { id: "inglaterra", nome: "Inglaterra, foto: "fotos/inglaterra.png" }
     ],
     ligas: [
