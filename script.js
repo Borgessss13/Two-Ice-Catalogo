@@ -1,72 +1,38 @@
 const listaDiv = document.getElementById('lista');
-const breadcrumb = document.getElementById('breadcrumb') || document.createElement('div');
 
-// BASE DE DADOS: É aqui que vais adicionar tudo
-const dados = [
-    {
-        liga: "Premier League",
-        clubes: [
-            { 
-                nome: "Arsenal", 
-                fotos: [
-                    "https://placehold.co", // Substitui pelo link da foto
-                    "https://placehold.co"
-                ] 
-            },
-            { 
-                nome: "Man City", 
-                fotos: ["https://placehold.co"] 
-            }
-        ]
-    },
-    {
-        liga: "Liga Portugal",
-        clubes: [
-            { 
-                nome: "Benfica", 
-                fotos: ["https://placehold.co"] 
-            }
-        ]
+async function carregarDados() {
+    try {
+        // Vai buscar o ficheiro que o robô criou
+        const response = await fetch('dados.json');
+        const camisolas = await response.json();
+
+        if (camisolas.length === 0) {
+            listaDiv.innerHTML = "<p>O catálogo está vazio. O robô ainda está a processar...</p>";
+            return;
+        }
+
+        listaDiv.innerHTML = '';
+        camisolas.forEach((item) => {
+            // Cria o card com a foto que está na pasta 'camisolas'
+            let card = `
+                <div class="card">
+                    <img src="${item.foto}" alt="${item.nome}" style="width:100%; border-radius:8px;">
+                    <h3 style="font-size: 14px; margin-top: 10px;">${item.nome}</h3>
+                    <button onclick="encomendar('${item.nome}')" style="background:#25d366; color:white; border:none; padding:10px; width:100%; border-radius:5px; margin-top:10px; cursor:pointer;">
+                        Encomendar via WhatsApp
+                    </button>
+                </div>`;
+            listaDiv.innerHTML += card;
+        });
+    } catch (error) {
+        console.error(error);
+        listaDiv.innerHTML = "<p>Erro ao carregar fotos. Tente novamente mais tarde.</p>";
     }
-];
-
-function mostrarLigas() {
-    listaDiv.innerHTML = '';
-    breadcrumb.innerHTML = '<strong>Escolha uma Liga</strong>';
-    dados.forEach((item, index) => {
-        listaDiv.innerHTML += `
-            <div class="card" onclick="mostrarClubes(${index})">
-                <h3>${item.liga}</h3>
-            </div>`;
-    });
 }
 
-function mostrarClubes(indexLiga) {
-    listaDiv.innerHTML = '';
-    breadcrumb.innerHTML = `<button onclick="mostrarLigas()">⬅ Voltar</button> <strong> > ${dados[indexLiga].liga}</strong>`;
-    
-    dados[indexLiga].clubes.forEach((clube, indexClube) => {
-        listaDiv.innerHTML += `
-            <div class="card" onclick="mostrarFotos(${indexLiga}, ${indexClube})">
-                <h3>${clube.nome}</h3>
-            </div>`;
-    });
+function encomendar(nome) {
+    const texto = encodeURIComponent(`Olá! Tenho interesse na camisola: ${nome}`);
+    window.open(`https://wa.me{texto}`, '_blank');
 }
 
-function mostrarFotos(indexLiga, indexClube) {
-    listaDiv.innerHTML = '';
-    const clube = dados[indexLiga].clubes[indexClube];
-    breadcrumb.innerHTML = `<button onclick="mostrarClubes(${indexLiga})">⬅ Voltar</button> <strong> > ${clube.nome}</strong>`;
-    
-    clube.fotos.forEach(foto => {
-        listaDiv.innerHTML += `
-            <div class="card">
-                <img src="${foto}" style="width:100%; border-radius:5px;">
-                <p>Camisola Oficial</p>
-                <button onclick="window.open('https://wa.me', '_blank')" style="background:#25d366; color:white; border:none; width:100%; padding:10px; border-radius:5px;">Encomendar</button>
-            </div>`;
-    });
-}
-
-// Iniciar o site
-mostrarLigas();
+carregarDados();
