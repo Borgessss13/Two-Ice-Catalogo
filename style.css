@@ -130,5 +130,37 @@ body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #333; scrol
     margin: 0 auto; /* Centra a grelha inteira no ecrã */
 }
 
+/* Garante que o container do título ocupa a largura toda e centra o conteúdo */
+.titulo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clear: both;
+    margin-top: 40px;
+}
+
+.section-title {
+    text-align: center !important;
+    width: auto;
+    display: inline-block;
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #000; /* Dá um detalhe elegante por baixo do título */
+    padding-bottom: 5px;
+}
+
+/* Ajuste da Grelha para não "subir" para o lado do título */
+.sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
 
