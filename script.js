@@ -8,7 +8,7 @@ const baseDeDados = {
         { id: "slb", nome: "Benfica", foto: "fotos/benfica.png" }
     ],
     "portugal": [
-        { id: "pt_home", nome: "Portugal Principal 25/26", foto: "camisolas/ptprin25/26.jpg" },
+        { id: "pt_home", nome: "Portugal Principal 25/26", foto: "camisolas/ptprin2526.jpg" },
         { id: "pt_away", nome: "Portugal Alternativa 25/26", foto: "camisolas/ptalternativa2526.jpg" }
     ]
     // Podes adicionar "premier": [ ... ] no futuro aqui
