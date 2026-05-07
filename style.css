@@ -106,5 +106,29 @@ body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #333; scrol
 }
 
 .path { font-weight: bold; color: #555; }
+/* Centrar os títulos das secções */
+.section-title {
+    width: 100%;
+    text-align: center; /* Centra o texto */
+    padding: 30px 0 10px 0; /* Espaçamento superior e inferior */
+    font-size: 28px;
+    color: #000;
+    text-transform: uppercase; /* Opcional: deixa em maiúsculas para dar destaque */
+    letter-spacing: 2px; /* Espaço entre letras para um look mais premium */
+    margin-bottom: 20px;
+    border-bottom: None; /* Remove a linha lateral se existia */
+}
+
+/* Garante que as grelhas por baixo também estão alinhadas */
+.sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra a grelha inteira no ecrã */
+}
+
 
 
