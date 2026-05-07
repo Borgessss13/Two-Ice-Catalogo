@@ -14,16 +14,16 @@ body {
    SECÇÃO HERO (IMAGEM TOTAL)
    ============================================================ */
 .hero {
-    width: 100%;
-    height: 100vh; /* Ocupa a tela inteira */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra o conteúdo no meio */
-    align-items: center;
-    text-align: center;
-    color: white;
+    /* ... outras configurações ... */
     
+    /* TROCA AQUI: Substitui 'A_TUA_FOTO_AQUI.jpg' pelo nome do teu ficheiro */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('paginainicial.jpg');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
     /* CAMADA DE FUNDO: Cor preta base + Imagem com Filtro Escuro */
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('A_TUA_FOTO_AQUI.jpg');
     background-color: #000; 
