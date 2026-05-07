@@ -94,4 +94,17 @@ body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #333; scrol
     .sub-grid { grid-template-columns: repeat(2, 1fr); }
     .section-title { font-size: 20px; }
 }
+.btn-voltar {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+    font-weight: bold;
+}
+
+.path { font-weight: bold; color: #555; }
+
 
