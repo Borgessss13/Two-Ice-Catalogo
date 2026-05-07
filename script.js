@@ -14,7 +14,7 @@ const baseDeDados = [
 const menus = {
     selecoes: [
         { id: "portugal", nome: "Portugal", foto: "fotos/portugal.png" },
-        { id: "brasil", nome: "Brasil", foto: "fotos/brasil_logo.png" }
+        { id: "brasil", nome: "Brasil", foto: "fotos/brasil.png" }
     ],
     ligas: [
         { id: "premier", nome: "Premier League", foto: "fotos/premier_logo.png" },
