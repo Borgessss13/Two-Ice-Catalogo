@@ -1,20 +1,39 @@
+// Selecionar o container principal
 const listaDiv = document.getElementById('lista');
 
-// 1. BASE DE DADOS DOS CLUBES (Organizado por ID da Liga/Seleção)
+// 1. BASE DE DADOS (Onde guardas os itens de cada Seleção ou Liga)
 const baseDeDados = {
+    "portugal": [
+        { 
+            id: "pt_home_26", 
+            nome: "Portugal Home 2026", 
+            foto: "https://yupoo.com" 
+        },
+        { 
+            id: "pt_away_26", 
+            nome: "Portugal Away 2026", 
+            foto: "https://yupoo.com" 
+        },
+        { 
+            id: "pt_treino_26", 
+            nome: "Portugal Treino 2026", 
+            foto: "https://yupoo.com" 
+        },
+        { 
+            id: "pt_retro", 
+            nome: "Portugal Edição Especial Retro", 
+            foto: "https://yupoo.com" 
+        }
+    ],
     "liga_pt": [
         { id: "scp", nome: "Sporting", foto: "fotos/sporting.png" },
         { id: "fcp", nome: "FC Porto", foto: "fotos/porto.jpg" },
         { id: "slb", nome: "Benfica", foto: "fotos/benfica.png" }
-    ],
-    "portugal": [
-        { id: "pt_home", nome: "Portugal Principal 25/26", foto: "camisolas/ptprin2526.jpg" },
-        { id: "pt_away", nome: "Portugal Alternativa 25/26", foto: "camisolas/ptalternativa2526.jpg" }
     ]
-    // Podes adicionar "premier": [ ... ] no futuro aqui
+    // Podes adicionar "brasil": [ ... ] ou "premier": [ ... ] aqui futuramente
 };
 
-// 2. MENUS PRINCIPAIS (O que aparece na Home - Mantive os teus nomes de ficheiros exatos)
+// 2. MENUS PRINCIPAIS (O que aparece na Home)
 const menus = {
     selecoes: [
         { id: "portugal", nome: "Portugal", foto: "fotos/portugal.png" },
@@ -60,7 +79,7 @@ function mostrarHome() {
     listaDiv.innerHTML += gridLig;
 }
 
-// 4. FUNÇÃO PARA VER CLUBES OU CAMISOLAS DE SELEÇÃO
+// 4. FUNÇÃO PARA VER CLUBES OU CAMISOLAS
 function verSubCategoria(id, nome) {
     const btnRetro = document.getElementById('btn-retroceder');
     if (btnRetro) btnRetro.style.display = 'block';
@@ -70,36 +89,57 @@ function verSubCategoria(id, nome) {
     const itens = baseDeDados[id];
 
     if (!itens) {
-        listaDiv.innerHTML += `<p style="text-align:center; padding:20px;">Catálogo de ${nome} brevemente disponível.</p>`;
+        listaDiv.innerHTML += `
+            <div style="text-align:center; padding:40px; width:100%;">
+                <p>Catálogo de ${nome} brevemente disponível.</p>
+                <button class="btn-insta" onclick="window.open('https://instagram.com', '_blank')" style="margin-top:20px;">CONSULTAR NO INSTAGRAM</button>
+            </div>`;
         return;
     }
 
     let gridItens = '<div class="sub-grid">';
     itens.forEach(item => {
-        // Se for clube, ao clicar vai para verCamisolas. Se já for camisola, podes ajustar aqui.
-        gridItens += criarCard(item, 'verDetalhesFinal');
+        // Agora ao clicar, se for de Portugal, abre logo o Instagram
+        if (id === "portugal") {
+            gridItens += criarCardComBotao(item);
+        } else {
+            gridItens += criarCard(item, 'verDetalhesFinal');
+        }
     });
     gridItens += '</div>';
     listaDiv.innerHTML += gridItens;
+
+    // Faz scroll automático para o início do catálogo ao entrar
+    window.scrollTo(0, document.getElementById("catalogo-section").offsetTop - 50);
 }
 
-// 5. FUNÇÃO FINAL (MOSTRAR CAMISOLA OU IR PARA INSTAGRAM)
+// 5. FUNÇÃO PARA VER CAMISOLAS DE CLUBES (Com botão Instagram direto)
 function verDetalhesFinal(id, nome) {
     listaDiv.innerHTML = `
         <div class="titulo-container"><h2 class="section-title">${nome}</h2></div>
-        <div style="text-align:center; padding:20px;">
-            <p>Interessado na camisola do ${nome}?</p>
+        <div style="text-align:center; padding:40px; width:100%;">
+            <p style="margin-bottom:20px; font-size:18px;">Interessado nas camisolas do <strong>${nome}</strong>?</p>
             <button class="btn-insta" onclick="window.open('https://instagram.com', '_blank')">CONSULTAR NO INSTAGRAM</button>
         </div>
     `;
 }
 
-// AUXILIAR: Cria os cards de forma limpa
+// AUXILIAR: Cria cards normais (para menus)
 function criarCard(item, funcaoClique) {
     return `
         <div class="card" onclick="${funcaoClique}('${item.id}', '${item.nome}')">
             <img src="${item.foto}" alt="${item.nome}" onerror="this.src='https://placehold.co'">
             <h3>${item.nome}</h3>
+        </div>`;
+}
+
+// AUXILIAR: Cria cards já com o botão Instagram (para camisolas finais)
+function criarCardComBotao(item) {
+    return `
+        <div class="card" onclick="window.open('https://instagram.com', '_blank')">
+            <img src="${item.foto}" alt="${item.nome}" onerror="this.src='https://placehold.co'">
+            <h3>${item.nome}</h3>
+            <button class="btn-insta">Ver Detalhes</button>
         </div>`;
 }
 
