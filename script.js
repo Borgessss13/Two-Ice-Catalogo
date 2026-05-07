@@ -3,9 +3,9 @@ const listaDiv = document.getElementById('lista');
 // 1. BASE DE DADOS DOS CLUBES (Organizado por ID da Liga/Seleção)
 const baseDeDados = {
     "liga_pt": [
-        { id: "slb", nome: "Benfica", foto: "fotos/benfica.png" },
         { id: "scp", nome: "Sporting", foto: "fotos/sporting.png" },
-        { id: "fcp", nome: "FC Porto", foto: "fotos/porto.png" }
+        { id: "fcp", nome: "FC Porto", foto: "fotos/porto.png" },
+        { id: "slb", nome: "Benfica", foto: "fotos/benfica.png" }
     ],
     "portugal": [
         { id: "pt_home", nome: "Portugal Principal", foto: "camisolas/portugal_home.jpg" },
