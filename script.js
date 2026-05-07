@@ -1,113 +1,80 @@
 const listaDiv = document.getElementById('lista');
+const breadcrumb = document.getElementById('breadcrumb');
 
-// 1. LISTA MANUAL (Coloca aqui as tuas camisolas favoritas)
-// Podes usar links de fotos que tenhas no Instagram ou noutros sites
-const camisolasManuais = [
-    { 
-        nome: "Camisola Principal - Época 24/25", 
-        foto: "https://placehold.co" 
-    },
-    { 
-        nome: "Camisola Alternativa - Época 24/25", 
-        foto: "https://placehold.co" 
-    }
+// 1. A TUA BASE DE DADOS (Adiciona aqui as camisolas)
+const baseDeDados = [
+    { id: "portugal", categoria: "selecao", nome: "Portugal Home 24/25", foto: "camisolas/portugal_1.jpg" },
+    { id: "portugal", categoria: "selecao", nome: "Portugal Away 24/25", foto: "camisolas/portugal_2.jpg" },
+    { id: "brasil", categoria: "selecao", nome: "Brasil Principal", foto: "camisolas/brasil_1.jpg" },
+    { id: "premier", categoria: "liga", nome: "Arsenal Home", foto: "camisolas/arsenal.jpg" },
+    { id: "premier", categoria: "liga", nome: "Man City Home", foto: "camisolas/city.jpg" }
 ];
 
-async function carregarDados() {
-    try {
-        const response = await fetch('dados.json?v=' + new Date().getTime());
-        let camisolas = await response.json();
-
-        // Se o robô não encontrar nada no Yupoo, usa a tua lista manual
-        if (!camisolas || camisolas.length === 0) {
-            console.log("Robô vazio, a carregar lista manual...");
-            camisolas = camisolasManuais;
-        }
-
-        listaDiv.innerHTML = '';
-        camisolas.forEach((item) => {
-            let card = `
-                <div class="card">
-                    <img src="${item.foto}" alt="${item.nome}">
-                    <h3>${item.nome}</h3>
-                    <button class="btn-insta" onclick="irParaInstagram()">
-                        VER NO INSTAGRAM
-                    </button>
-                </div>`;
-            listaDiv.innerHTML += card;
-        });
-    } catch (error) {
-        console.log("Erro ao ler JSON, a usar manual...");
-        renderizarLista(camisolasManuais);
-    }
-}
-
-function renderizarLista(lista) {
-    listaDiv.innerHTML = '';
-    lista.forEach((item) => {
-        listaDiv.innerHTML += `
-            <div class="card">
-                <img src="${item.foto}" alt="${item.nome}">
-                <h3>${item.nome}</h3>
-                <button class="btn-insta" onclick="irParaInstagram()">
-                    VER NO INSTAGRAM
-                </button>
-            </div>`;
-    });
-}
-
-function irParaInstagram() {
-    window.open('https://instagram.com', '_blank');
-}
-
-carregarDados();
-const listaDiv = document.getElementById('lista');
-
-// ESTRUTURA DE DADOS (Exemplo de como deves preencher)
-const categorias = {
+// 2. CONFIGURAÇÃO DOS MENUS (Categorias)
+const menus = {
     selecoes: [
-        { nome: "Portugal", foto: "fotos/portugal_logo.jpg", link: "LINK_YUPPO_PORTUGAL" },
-        { nome: "Brasil", foto: "fotos/brasil_logo.jpg", link: "LINK_YUPPO_BRASIL" },
-        { nome: "França", foto: "fotos/franca_logo.jpg", link: "LINK_YUPPO_FRANCA" }
+        { id: "portugal", nome: "Portugal", foto: "fotos/portugal_logo.png" },
+        { id: "brasil", nome: "Brasil", foto: "fotos/brasil_logo.png" }
     ],
     ligas: [
-        { nome: "Liga Portugal", foto: "fotos/liga_pt.jpg", link: "LINK_YUPPO_LIGA_PT" },
-        { nome: "Premier League", foto: "fotos/premier_league.jpg", link: "LINK_YUPPO_PREMIER" },
-        { nome: "La Liga", foto: "fotos/la_liga.jpg", link: "LINK_YUPPO_LALIGA" }
+        { id: "premier", nome: "Premier League", foto: "fotos/premier_logo.png" },
+        { id: "liga_pt", nome: "Liga Portugal", foto: "fotos/liga_pt_logo.png" }
     ]
 };
 
-function carregarHome() {
+// FUNÇÃO PARA MOSTRAR A HOME (SELEÇÕES E LIGAS)
+function mostrarHome() {
     listaDiv.innerHTML = '';
+    breadcrumb.innerHTML = ''; // Limpa o botão voltar na home
 
-    // SECÇÃO SELECÇÕES
-    listaDiv.innerHTML += '<h2 class="section-title">Seleções</h2>';
-    let gridSelecoes = '<div class="sub-grid">';
-    categorias.selecoes.forEach(item => {
-        gridSelecoes += criarCard(item);
+    // Renderizar Seleções
+    listaDiv.innerHTML += '<h2 class="section-title">Seleções</h2><div class="sub-grid" id="grid-selecoes"></div>';
+    const gridSel = document.getElementById('grid-selecoes');
+    menus.selecoes.forEach(item => {
+        gridSel.innerHTML += criarCardCategoria(item);
     });
-    gridSelecoes += '</div>';
-    listaDiv.innerHTML += gridSelecoes;
 
-    // SECÇÃO LIGAS
-    listaDiv.innerHTML += '<h2 class="section-title">Ligas</h2>';
-    let gridLigas = '<div class="sub-grid">';
-    categorias.ligas.forEach(item => {
-        gridLigas += criarCard(item);
+    // Renderizar Ligas
+    listaDiv.innerHTML += '<h2 class="section-title">Ligas</h2><div class="sub-grid" id="grid-ligas"></div>';
+    const gridLig = document.getElementById('grid-ligas');
+    menus.ligas.forEach(item => {
+        gridLig.innerHTML += criarCardCategoria(item);
     });
-    gridLigas += '</div>';
-    listaDiv.innerHTML += gridLigas;
 }
 
-function criarCard(item) {
+// CRIA O CARD DA CATEGORIA (Logo da Seleção/Liga)
+function criarCardCategoria(item) {
     return `
-        <div class="card" onclick="window.open('${item.link}', '_blank')">
+        <div class="card" onclick="verCamisolas('${item.id}', '${item.nome}')">
             <img src="${item.foto}" alt="${item.nome}">
             <h3>${item.nome}</h3>
-        </div>
-    `;
+        </div>`;
 }
 
-// Inicia o site
-carregarHome();
+// MOSTRA AS CAMISOLAS DA CATEGORIA CLICADA
+function verCamisolas(idAlvo, nomeAlvo) {
+    listaDiv.innerHTML = '';
+    breadcrumb.innerHTML = `<button onclick="mostrarHome()" class="btn-voltar">⬅ Voltar para Categorias</button> <span class="path"> > ${nomeAlvo}</span>`;
 
+    // Filtra na base de dados apenas o que corresponde ao ID (ex: 'portugal')
+    const filtrados = baseDeDados.filter(c => c.id === idAlvo);
+
+    if (filtrados.length === 0) {
+        listaDiv.innerHTML = '<p style="padding:20px;">Brevemente disponíveis...</p>';
+        return;
+    }
+
+    let gridCamisolas = '<div class="sub-grid">';
+    filtrados.forEach(c => {
+        gridCamisolas += `
+            <div class="card">
+                <img src="${c.foto}" alt="${c.nome}">
+                <h3>${c.nome}</h3>
+                <button class="btn-insta" onclick="window.open('https://instagram.com._', '_blank')">VER NO INSTAGRAM</button>
+            </div>`;
+    });
+    gridCamisolas += '</div>';
+    listaDiv.innerHTML += gridCamisolas;
+}
+
+mostrarHome();
