@@ -12,11 +12,11 @@ const baseDeDados = [
 
 // 2. CONFIGURAÇÃO DOS MENUS (Categorias)
 const menus = {
-    selecoes: [
+    Selecoes: [
         { id: "portugal", nome: "Portugal", foto: "fotos/portugal.png" },
         { id: "brasil", nome: "Brasil", foto: "fotos/brasil.png" }
     ],
-    ligas: [
+    Ligas: [
         { id: "premier", nome: "Premier League", foto: "fotos/premier_logo.png" },
         { id: "liga_pt", nome: "Liga Portugal", foto: "fotos/liga_pt_logo.png" }
     ]
