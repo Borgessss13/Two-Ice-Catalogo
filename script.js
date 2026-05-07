@@ -10,13 +10,13 @@ const baseDeDados = {
     ],
     "portugal": [
         { id: "pt_home", nome: "Portugal Principal 2026", foto: "ptprin2526.jpg" },
-        { id: "pt_away", nome: "Portugal Away 2026", foto: "https://yupoo.com" },
-        { id: "pt_treino", nome: "Portugal Treino 2026", foto: "https://yupoo.com" },
-        { id: "pt_retro", nome: "Portugal Edição Retro", foto: "https://yupoo.com" }
+        { id: "pt_away", nome: "Portugal Away 2026", foto: "ptaway2526.jpg" },
+        { id: "pt_treino", nome: "Portugal Treino 2026", foto: "pttreino2526.jpg" },
+        { id: "pt_retro", nome: "Portugal Edição Retro", foto: "ptretro2526.jpg" }
     ]
 };
 
-// 2. MENUS PRINCIPAIS (O que aparece na Home)
+// 2. MENUS PRINCIPAIS (Home)
 const menus = {
     selecoes: [
         { id: "portugal", nome: "Portugal", foto: "fotos/portugal.png" },
@@ -62,7 +62,7 @@ function mostrarHome() {
     listaDiv.innerHTML += gridLig;
 }
 
-// 4. FUNÇÃO PARA VER CLUBES OU CAMISOLAS DE SELEÇÃO
+// 4. FUNÇÃO PARA VER CLUBES OU CAMISOLAS
 function verSubCategoria(id, nome) {
     const btnRetro = document.getElementById('btn-retroceder');
     if (btnRetro) btnRetro.style.display = 'block';
@@ -72,7 +72,7 @@ function verSubCategoria(id, nome) {
     const itens = baseDeDados[id];
 
     if (!itens) {
-        listaDiv.innerHTML += `<p style="text-align:center; padding:20px; width:100%;">Catálogo de ${nome} brevemente disponível.</p>`;
+        listaDiv.innerHTML += `<p style="text-align:center; padding:40px; width:100%;">Catálogo de ${nome} brevemente disponível.</p>`;
         return;
     }
 
@@ -83,21 +83,22 @@ function verSubCategoria(id, nome) {
     gridItens += '</div>';
     listaDiv.innerHTML += gridItens;
     
+    // Faz scroll automático para o catálogo
     window.scrollTo(0, document.getElementById("catalogo-section").offsetTop - 50);
 }
 
-// 5. FUNÇÃO FINAL (MOSTRAR CAMISOLA OU IR PARA INSTAGRAM)
+// 5. FUNÇÃO DETALHE FINAL (Botão Instagram)
 function verDetalhesFinal(id, nome) {
     listaDiv.innerHTML = `
         <div class="titulo-container"><h2 class="section-title">${nome}</h2></div>
-        <div style="text-align:center; padding:40px; width:100%;">
-            <p style="margin-bottom:20px; font-size:18px;">Interessado na camisola: <strong>${nome}</strong>?</p>
+        <div style="text-align:center; padding:60px; width:100%;">
+            <p style="margin-bottom:20px; font-size:18px;">Gostaste da camisola <strong>${nome}</strong>?</p>
             <button class="btn-insta" onclick="window.open('https://instagram.com', '_blank')">CONSULTAR NO INSTAGRAM</button>
         </div>
     `;
 }
 
-// AUXILIAR: Cria os cards de forma limpa
+// AUXILIAR: Criar cards
 function criarCard(item, funcaoClique) {
     return `
         <div class="card" onclick="${funcaoClique}('${item.id}', '${item.nome}')">
@@ -106,5 +107,5 @@ function criarCard(item, funcaoClique) {
         </div>`;
 }
 
-// GATILHO DE INICIALIZAÇÃO
+// Inicialização
 document.addEventListener('DOMContentLoaded', mostrarHome);
