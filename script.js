@@ -27,15 +27,24 @@ function mostrarHome() {
     document.getElementById('btn-retroceder').style.display = 'none';
     listaDiv.innerHTML = '';
 
-    // --- SECÇÃO SELECÇÕES ---
-    listaDiv.innerHTML += '<div class="titulo-container"><h2 class="section-title">Seleções</h2></div>';
-    
-    let gridSelecoes = '<div class="sub-grid">';
-    menus.selecoes.forEach(item => {
-        gridSelecoes += criarCardCategoria(item);
-    });
-    gridSelecoes += '</div>';
-    listaDiv.innerHTML += gridSelecoes;
+    // --- BLOCO SELEÇÕES ---
+    const htmlSelecoes = `
+        <div class="titulo-container"><h2 class="section-title">Seleções</h2></div>
+        <div class="sub-grid">
+            ${menus.selecoes.map(item => criarCardCategoria(item)).join('')}
+        </div>
+    `;
+    listaDiv.innerHTML += htmlSelecoes;
+
+    // --- BLOCO LIGAS ---
+    const htmlLigas = `
+        <div class="titulo-container"><h2 class="section-title">Ligas</h2></div>
+        <div class="sub-grid">
+            ${menus.ligas.map(item => criarCardCategoria(item)).join('')}
+        </div>
+    `;
+    listaDiv.innerHTML += htmlLigas;
+}
 
     // --- SECÇÃO LIGAS ---
     listaDiv.innerHTML += '<div class="titulo-container"><h2 class="section-title">Ligas</h2></div>';
