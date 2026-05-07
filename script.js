@@ -9,10 +9,10 @@ const baseDeDados = {
         { id: "slb", nome: "Benfica", foto: "fotos/benfica.png" }
     ],
     "portugal": [
-        { id: "pt_home", nome: "Portugal Principal 2026", foto: "pthome26.jpg" },
-        { id: "pt_away", nome: "Portugal Away 2026", foto: "ptaway26.jpg" },
-        { id: "pt_treino", nome: "Portugal Treino 2026", foto: "pttrain26.png" },
-        { id: "pt_retro", nome: "Portugal Edição Retro", foto: "ptretro2526.jpg" }
+        { id: "pt_home", nome: "Portugal Principal 2026", foto: "camisolas/pthome26.jpg" },
+        { id: "pt_away", nome: "Portugal Away 2026", foto: "camisolas/ptaway26.jpg" },
+        { id: "pt_treino", nome: "Portugal Treino 2026", foto: "camisolas/pttrain26.png" },
+        { id: "pt_retro", nome: "Portugal Edição Retro", foto: "camisolas/ptretro2526.jpg" }
     ]
 };
 
