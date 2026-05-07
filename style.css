@@ -230,4 +230,20 @@ body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #333; scrol
 }
 
 
+/* Assume que a tua secção preta tem uma classe como .hero ou .header-section */
+.hero-section {
+    width: 100%;
+    min-height: 100vh; /* Ocupa 100% da altura da janela */
+    background-color: #000; /* Cor preta original */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Configuração para a futura imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
