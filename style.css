@@ -76,38 +76,50 @@ body {
 /* ============================================================
    CAIXINHAS DE MOTIVOS (POSIÇÃO FUNDO + EFEITO VIDRO)
    ============================================================ */
+/* ============================================================
+   CAIXINHAS ESPALHADAS (ESQUERDA, CENTRO, DIREITA)
+   ============================================================ */
 .motivos-hero {
     position: absolute;
-    bottom: 40px; /* Coloca no fundo do ecrã */
+    bottom: 40px; /* Distância do fundo */
+    left: 50%;
+    transform: translateX(-50%); /* Centra o grupo todo no ecrã */
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 1100px;
-    padding: 0 20px;
+    justify-content: space-between; /* Espalha: uma em cada ponta e uma no meio */
+    align-items: center;
+    width: 90%; /* Ocupa 90% da largura para não colarem totalmente aos bordos */
+    max-width: 1300px; /* Limite para ecrãs muito grandes não ficarem demasiado longe */
     z-index: 2;
 }
 
 .motivo-card-hero {
-    background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
-    backdrop-filter: blur(12px); /* Efeito de vidro desfocado */
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda fina discreta */
+    border: 1px solid rgba(255, 255, 255, 0.2); 
     padding: 20px;
     border-radius: 15px;
     text-align: center;
-    flex: 1;
+    width: 30%; /* Cada caixa ocupa cerca de 1/3 do espaço */
+    color: white;
     transition: 0.3s;
 }
 
-.motivo-card-hero:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-5px);
+/* Ajuste para Telemóvel (No telemóvel devem ficar em lista para caberem) */
+@media (max-width: 768px) {
+    .motivos-hero { 
+        position: relative; 
+        bottom: 0; 
+        flex-direction: column; 
+        gap: 15px;
+        width: 100%;
+        margin-top: 50px; 
+    }
+    
+    .motivo-card-hero { 
+        width: 90%; /* No telemóvel ocupam a largura quase toda */
+    }
 }
-
-.motivo-card-hero span { font-size: 28px; display: block; margin-bottom: 8px; }
-.motivo-card-hero h3 { font-size: 15px; text-transform: uppercase; letter-spacing: 1px; }
-.motivo-card-hero p { font-size: 12px; opacity: 0.7; margin-top: 5px; }
 
 /* ============================================================
    CATÁLOGO E GRELHAS
