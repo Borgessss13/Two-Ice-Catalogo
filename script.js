@@ -9,8 +9,8 @@ const baseDeDados = {
         { id: "slb", nome: "Benfica", foto: "fotos/benfica.png" }
     ],
     "portugal": [
-        { id: "pt_home", nome: "Portugal Principal 2026", foto: "ptprin2627.jpg" },
-        { id: "pt_away", nome: "Portugal Away 2026", foto: "ptalternativa2526.jpg" },
+        { id: "pt_home", nome: "Portugal Principal 2026", foto: "pthome26.jpg" },
+        { id: "pt_away", nome: "Portugal Away 2026", foto: "ptaway26.jpg" },
         { id: "pt_treino", nome: "Portugal Treino 2026", foto: "pttreino2526.jpg" },
         { id: "pt_retro", nome: "Portugal Edição Retro", foto: "ptretro2526.jpg" }
     ]
