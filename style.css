@@ -25,7 +25,7 @@ body {
 }
 
     /* CAMADA DE FUNDO: Cor preta base + Imagem com Filtro Escuro */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('A_TUA_FOTO_AQUI.jpg');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('fundo.png');
     background-color: #000; 
     background-size: cover;
     background-position: center;
