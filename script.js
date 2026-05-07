@@ -13,7 +13,7 @@ const baseDeDados = [
 // 2. CONFIGURAÇÃO DOS MENUS (Categorias)
 const menus = {
     selecoes: [
-        { id: "portugal", nome: "Portugal", foto: "fotos/portugal_logo.png" },
+        { id: "portugal", nome: "Portugal", foto: "fotos/portugal.png" },
         { id: "brasil", nome: "Brasil", foto: "fotos/brasil_logo.png" }
     ],
     ligas: [
