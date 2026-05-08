@@ -104,16 +104,18 @@ function verDetalhesFinal(id, nome) {
     `;
 }
 
-// AUXILIAR: Criar cards
 function criarCard(item, funcaoClique) {
+    // Se o item não tiver um nome bonito definido, ele limpa o nome do ID ou do Ficheiro
+    let nomeExibicao = item.nome ? item.nome : limparNome(item.id);
+
     return `
-        <div class="card" onclick="${funcaoClique}('${item.id}', '${item.nome}')">
-            <img src="${item.foto}" alt="${item.nome}" onerror="this.src='https://placehold.co'">
-            <h3>${item.nome}</h3>
+        <div class="card" onclick="${funcaoClique}('${item.id}', '${nomeExibicao}')">
+            <img src="${item.foto}" alt="${nomeExibicao}" onerror="this.src='https://placehold.co'">
+            <h3>${nomeExibicao}</h3>
+            <button class="btn-insta">Ver Detalhes</button>
         </div>`;
 }
 
-// Inicialização
 document.addEventListener('DOMContentLoaded', mostrarHome);
 
 function limparNome(nomeSujo) {
