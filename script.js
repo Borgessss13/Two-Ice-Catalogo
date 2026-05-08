@@ -9,33 +9,40 @@ const baseDeDados = {
         { id: "slb", nome: "Benfica", foto: "fotos/benfica.png" }
     ],
     "portugal": [
-        // --- ÉPOCA 2026 ---
-        { id: "pt_home26", nome: "Portugal Principal 2026", foto: "camisolas/pthome26.jpg" },
+        // --- ANO 2026 (Mundial) ---
+        { id: "pt_home26", nome: "Portugal Home 2026", foto: "camisolas/pthome26.jpg" },
         { id: "pt_away26", nome: "Portugal Away 2026", foto: "camisolas/ptaway26.jpg" },
-        { id: "pt_treino26", nome: "Portugal Treino 2026", foto: "camisolas/pttrain26.png" },
-        { id: "pt_treino_camoflagem26", nome: "Portugal Treino Camuflagem 2026", foto: "camisolas/pttraincamo26.jpg" },
-        { id: "pt_away_mng_compr26", nome: "Portugal Away Manga Comprida 2026", foto: "camisolas/ptaaymngcomp26.png" },
-        { id: "pt_edit_aniver26", nome: "Portugal Edição Aniversário 2026", foto: "camisolas/pteditaniver26.png" },
-        { id: "pt_treino_sec26", nome: "Portugal Treino Secundária 2026", foto: "camisolas/pttrain226.png" },
-        { id: "pt_special26", nome: "Portugal Edição Especial 2026", foto: "camisolas/ptspecial26.jpg" },
-        { id: "pt_wind26", nome: "Portugal Windbreaker 2026", foto: "camisolas/Portugal_2026_Windbreaker.jpg" },
-        { id: "pt_prematch26", nome: "Portugal Pre-match 2026", foto: "camisolas/Portugal_2026_Pre-match_Player.jpg" },
+        { id: "pt_home_long26", nome: "Portugal Home Manga Comprida 2026", foto: "camisolas/pthomelong26.jpg" },
+        { id: "pt_away_long26", nome: "Portugal Away Manga Comprida 2026", foto: "camisolas/ptawaylong26.jpg" },
+        { id: "pt_prematch26", nome: "Portugal Pre-Match 2026", foto: "camisolas/ptprematch26.jpg" },
+        { id: "pt_training26", nome: "Portugal Training Shirt 2026", foto: "camisolas/pttraining26.jpg" },
+        { id: "pt_special26", nome: "Portugal Special Jersey 2026", foto: "camisolas/ptspecial26.jpg" },
+        { id: "pt_windbreaker26", nome: "Portugal Windbreaker 2026", foto: "camisolas/ptwind26.jpg" },
 
-        // --- ÉPOCA 2024 / 2025 ---
-        { id: "pthome24", nome: "Portugal Home 24/25", foto: "camisolas/24_25_Player_Portugal_Home.jpg" },
-        { id: "ptaway24", nome: "Portugal Away 24/25", foto: "camisolas/24_25_Player_Portugal_Away.jpg" },
-        { id: "ptblack24", nome: "Portugal Black Training 24", foto: "camisolas/24_25_Portugal_Black_training.jpg" },
-        { id: "ptspecial24", nome: "Portugal Special Edition Red 24", foto: "camisolas/Portugal_2024_25_Special_Edition_Red.jpg" },
+        // --- ANO 2024 / 2025 ---
+        { id: "pt_home24", nome: "Portugal Home 24/25", foto: "camisolas/pthome24.jpg" },
+        { id: "pt_away24", nome: "Portugal Away 24/25", foto: "camisolas/ptaway24.jpg" },
+        { id: "pt_black_train24", nome: "Portugal Black Training 24", foto: "camisolas/ptblacktrain24.jpg" },
+        { id: "pt_special_red24", nome: "Portugal Special Edition Red 24", foto: "camisolas/ptspecialred24.jpg" },
 
-        // --- RETRO E EDIÇÕES ESPECIAIS ---
-        { id: "ptretro04", nome: "Portugal Retro 2004", foto: "camisolas/Retro_Portugal_2004_home.jpg" },
-        { id: "ptretro98", nome: "Portugal Retro 1998 Away", foto: "camisolas/Retro_1998_Portugal_away.jpg" },
-        { id: "ptretro10", nome: "Portugal Retro 2010 Away", foto: "camisolas/Retro_Portugal_2010_Away.jpg" },
-        { id: "ptretro01", nome: "Sporting Retro 01/03 (Ronaldo)", foto: "camisolas/Retro_01-03_Sporting_Lisbon_Portugal.jpg" },
-        { id: "ptspecial_eusebio", nome: "Portugal Tribute to Eusébio", foto: "camisolas/Portugal_Tribute_to_Eusebio_Special.jpg" },
-        { id: "ptblack_special", nome: "Portugal Black Special Edition", foto: "camisolas/23_24_Portugal_Black_Special_Edition.jpg" }
+        // --- ANO 2022 / 2023 ---
+        { id: "pt_home22", nome: "Portugal Home 2022", foto: "camisolas/pthome22.jpg" },
+        { id: "pt_away22", nome: "Portugal Away 2022", foto: "camisolas/ptaway22.jpg" },
+        { id: "pt_concept_black22", nome: "Portugal Concept Black 2022", foto: "camisolas/ptconceptblack22.jpg" },
+
+        // --- RETRO (CLÁSSICAS) ---
+        { id: "pt_retro16", nome: "Portugal Retro 2016", foto: "camisolas/ptretro16.jpg" },
+        { id: "pt_retro10", nome: "Portugal Retro 2010", foto: "camisolas/ptretro10.jpg" },
+        { id: "pt_retro04", nome: "Portugal Retro 2004", foto: "camisolas/ptretro04.jpg" },
+        { id: "pt_retro02", nome: "Portugal Retro 2002", foto: "camisolas/ptretro02.jpg" },
+        { id: "pt_retro00", nome: "Portugal Retro 2000", foto: "camisolas/ptretro00.jpg" },
+        { id: "pt_retro98", nome: "Portugal Retro 1998", foto: "camisolas/ptretro98.jpg" },
+        { id: "pt_sporting01", nome: "Sporting Retro 01/03 (Ronaldo)", foto: "camisolas/ptscp01.jpg" },
+        { id: "pt_eusebio", nome: "Portugal Tribute to Eusébio", foto: "camisolas/pteusebio.jpg" }
     ]
 };
+
+        
 
 // 2. MENUS PRINCIPAIS (Home)
 const menus = {
