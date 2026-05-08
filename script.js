@@ -36,8 +36,6 @@ const baseDeDados = {
         { id: "pt_eusebio", nome: "Portugal Tribute to Eusébio", foto: "camisolas/pteusebio.jpg" }
     ]
 };
-const baseDeDados = {
-    // ... Portugal e outras seleções ...
 
     "brasil": [
         // --- ÉPOCA 2026 ---
