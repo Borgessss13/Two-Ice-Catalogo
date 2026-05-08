@@ -9,20 +9,17 @@ const baseDeDados = {
         { id: "slb", nome: "Benfica", foto: "fotos/benfica.png" }
     ],
     "portugal": [
+        // --- ÉPOCA 2026 ---
         { id: "pt_home26", nome: "Portugal Principal 2026", foto: "camisolas/pthome26.jpg" },
         { id: "pt_away26", nome: "Portugal Away 2026", foto: "camisolas/ptaway26.jpg" },
         { id: "pt_treino26", nome: "Portugal Treino 2026", foto: "camisolas/pttrain26.png" },
-        { id: "pt_treino_camoflagem26", nome: "Portugal Treino Camuflagem  2026", foto: "camisolas/pttraincamo26.jpg" },
+        { id: "pt_treino_camoflagem26", nome: "Portugal Treino Camuflagem 2026", foto: "camisolas/pttraincamo26.jpg" },
         { id: "pt_away_mng_compr26", nome: "Portugal Away Manga Comprida 2026", foto: "camisolas/ptaaymngcomp26.png" },
         { id: "pt_edit_aniver26", nome: "Portugal Edição Aniversário 2026", foto: "camisolas/pteditaniver26.png" },
         { id: "pt_treino_sec26", nome: "Portugal Treino Secundária 2026", foto: "camisolas/pttrain226.png" },
         { id: "pt_special26", nome: "Portugal Edição Especial 2026", foto: "camisolas/ptspecial26.jpg" },
-        { id: "pt_home24", nome: "Portugal Principal 2024", foto: "camisolas/pthome24.jpeg" },
-         { id: "pthome26", nome: "Portugal Home 2026", foto: "camisolas/Portugal_2026_Home_Jersey.jpg" },
-        { id: "ptaway26", nome: "Portugal Away 2026", foto: "camisolas/Portugal_2026_Away_Jersey.jpg" },
-        { id: "pttreino26", nome: "Portugal Treino 2026", foto: "camisolas/Portugal_2026_Training_shirt.jpg" },
-        { id: "ptwind26", nome: "Portugal Windbreaker 2026", foto: "camisolas/Portugal_2026_Windbreaker.jpg" },
-        { id: "ptprematch26", nome: "Portugal Pre-match 2026", foto: "camisolas/Portugal_2026_Pre-match_Player.jpg" },
+        { id: "pt_wind26", nome: "Portugal Windbreaker 2026", foto: "camisolas/Portugal_2026_Windbreaker.jpg" },
+        { id: "pt_prematch26", nome: "Portugal Pre-match 2026", foto: "camisolas/Portugal_2026_Pre-match_Player.jpg" },
 
         // --- ÉPOCA 2024 / 2025 ---
         { id: "pthome24", nome: "Portugal Home 24/25", foto: "camisolas/24_25_Player_Portugal_Home.jpg" },
@@ -37,8 +34,6 @@ const baseDeDados = {
         { id: "ptretro01", nome: "Sporting Retro 01/03 (Ronaldo)", foto: "camisolas/Retro_01-03_Sporting_Lisbon_Portugal.jpg" },
         { id: "ptspecial_eusebio", nome: "Portugal Tribute to Eusébio", foto: "camisolas/Portugal_Tribute_to_Eusebio_Special.jpg" },
         { id: "ptblack_special", nome: "Portugal Black Special Edition", foto: "camisolas/23_24_Portugal_Black_Special_Edition.jpg" }
-    ],
-  
     ]
 };
 
@@ -66,7 +61,7 @@ const menus = {
     ]
 };
 
-// 3. FUNÇÃO PARA MOSTRAR A HOME
+// 3. FUNÇÕES DE NAVEGAÇÃO
 function mostrarHome() {
     const btnRetro = document.getElementById('btn-retroceder');
     if (btnRetro) btnRetro.style.display = 'none';
@@ -88,7 +83,6 @@ function mostrarHome() {
     listaDiv.innerHTML += gridLig;
 }
 
-// 4. FUNÇÃO PARA VER CLUBES OU CAMISOLAS
 function verSubCategoria(id, nome) {
     const btnRetro = document.getElementById('btn-retroceder');
     if (btnRetro) btnRetro.style.display = 'block';
@@ -109,11 +103,9 @@ function verSubCategoria(id, nome) {
     gridItens += '</div>';
     listaDiv.innerHTML += gridItens;
     
-    // Faz scroll automático para o catálogo
     window.scrollTo(0, document.getElementById("catalogo-section").offsetTop - 50);
 }
 
-// 5. FUNÇÃO DETALHE FINAL (Botão Instagram)
 function verDetalhesFinal(id, nome) {
     listaDiv.innerHTML = `
         <div class="titulo-container"><h2 class="section-title">${nome}</h2></div>
@@ -124,25 +116,26 @@ function verDetalhesFinal(id, nome) {
     `;
 }
 
+// 4. AUXILIARES
 function criarCard(item, funcaoClique) {
-    // Se o item não tiver um nome bonito definido, ele limpa o nome do ID ou do Ficheiro
+    // Se o item não tiver um nome bonito, usa o ID
     let nomeExibicao = item.nome ? item.nome : limparNome(item.id);
 
     return `
-        <div class="card" onclick="${funcaoClique}('${item.id}', '${nomeExibicao}')">
+        <div class="card" onclick="${funcaoClique}('${item.id}', '${nomeExibicao.replace(/'/g, "\\'")}')">
             <img src="${item.foto}" alt="${nomeExibicao}" onerror="this.src='https://placehold.co'">
             <h3>${nomeExibicao}</h3>
-            <button class="btn-insta">Ver Detalhes</button>
         </div>`;
 }
 
-document.addEventListener('DOMContentLoaded', mostrarHome);
-
 function limparNome(nomeSujo) {
     return nomeSujo
-        .replace(/S-XXL|S-4XL|5-4XL|S-XXXL|S-3XL|SIZE S-XXL|Size S-XXL/gi, "") // Remove tamanhos
-        .replace(/FIFA World Cup|player version|2025_26|2024_25/gi, "") // Remove termos técnicos
-        .replace(/_/g, " ") // Troca underscores por espaços
-        .replace(/\s+/g, " ") // Remove espaços duplos
-        .trim(); // Limpa espaços no início e fim
+        .replace(/S-XXL|S-4XL|5-4XL|S-XXXL|S-3XL|SIZE S-XXL|Size S-XXL/gi, "")
+        .replace(/FIFA World Cup|player version|2025_26|2024_25/gi, "")
+        .replace(/_/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
 }
+
+// 5. INICIALIZAÇÃO
+document.addEventListener('DOMContentLoaded', mostrarHome);
