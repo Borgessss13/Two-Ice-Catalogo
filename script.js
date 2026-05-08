@@ -28,7 +28,7 @@ const baseDeDados = {
 
         // --- RETRO (CLÁSSICAS) ---
         { id: "pt_retro16", nome: "Portugal Retro 2016", foto: "camisolas/pt_home_retro16.jpg" },
-        { id: "pt_retro10", nome: "Portugal Retro 2010", foto: "camisolas/pt_away_etro10.jpg" },
+        { id: "pt_retro10", nome: "Portugal Retro 2010", foto: "camisolas/pt_away_retro010.jpg" },
         { id: "pt_retro04", nome: "Portugal Retro 2004", foto: "camisolas/pt_home_retro04.jpg" },
         { id: "pt_retro02", nome: "Portugal Retro 2002", foto: "camisolas/pt_home_retro02.jpg" },
         { id: "pt_retro00", nome: "Portugal Retro 2000", foto: "camisolas/pt_home_retro00.jpg" },
