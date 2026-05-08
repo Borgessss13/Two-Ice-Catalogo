@@ -35,8 +35,6 @@ const baseDeDados = {
         { id: "pt_retro98", nome: "Portugal Retro 1998", foto: "camisolas/pt_away_retro98.jpg" },
         { id: "pt_eusebio", nome: "Portugal Tribute to Eusébio", foto: "camisolas/pteusebio.jpg" }
     ]
-};
-
     "brasil": [
         // --- ÉPOCA 2026 ---
         { id: "brhome26", nome: "Brasil Home 2026", foto: "camisolas/brhome26.jpg" },
