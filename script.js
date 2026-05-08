@@ -115,3 +115,12 @@ function criarCard(item, funcaoClique) {
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', mostrarHome);
+
+function limparNome(nomeSujo) {
+    return nomeSujo
+        .replace(/S-XXL|S-4XL|5-4XL|S-XXXL|S-3XL|SIZE S-XXL|Size S-XXL/gi, "") // Remove tamanhos
+        .replace(/FIFA World Cup|player version|2025_26|2024_25/gi, "") // Remove termos técnicos
+        .replace(/_/g, " ") // Troca underscores por espaços
+        .replace(/\s+/g, " ") // Remove espaços duplos
+        .trim(); // Limpa espaços no início e fim
+}
