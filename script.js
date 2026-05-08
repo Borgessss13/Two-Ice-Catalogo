@@ -37,7 +37,6 @@ const baseDeDados = {
         { id: "pt_retro02", nome: "Portugal Retro 2002", foto: "camisolas/ptretro02.jpg" },
         { id: "pt_retro00", nome: "Portugal Retro 2000", foto: "camisolas/ptretro00.jpg" },
         { id: "pt_retro98", nome: "Portugal Retro 1998", foto: "camisolas/ptretro98.jpg" },
-        { id: "pt_sporting01", nome: "Sporting Retro 01/03 (Ronaldo)", foto: "camisolas/ptscp01.jpg" },
         { id: "pt_eusebio", nome: "Portugal Tribute to Eusébio", foto: "camisolas/pteusebio.jpg" }
     ]
 };
