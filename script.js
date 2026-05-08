@@ -36,6 +36,40 @@ const baseDeDados = {
         { id: "pt_eusebio", nome: "Portugal Tribute to Eusébio", foto: "camisolas/pteusebio.jpg" }
     ]
 };
+const baseDeDados = {
+    // ... Portugal e outras seleções ...
+
+    "brasil": [
+        // --- ÉPOCA 2026 ---
+        { id: "brhome26", nome: "Brasil Home 2026", foto: "camisolas/brhome26.jpg" },
+        { id: "braway26", nome: "Brasil Away 2026", foto: "camisolas/braway26.jpg" },
+        { id: "brspecial26", nome: "Brasil Special 2026", foto: "camisolas/brspecial26.jpg" },
+        { id: "brspecial26_2", nome: "Brasil Special 2026 V2", foto: "camisolas/brspecial26 (2).jpg" },
+        { id: "brspecial26_3", nome: "Brasil Special 2026 V3", foto: "camisolas/brspecial26 (3).jpg" },
+
+        // --- ÉPOCA 2024 / 2025 ---
+        { id: "brhome24", nome: "Brasil Home 24/25", foto: "camisolas/brhome24.jpg" },
+        { id: "brspecial24", nome: "Brasil Special 24/25", foto: "camisolas/brspecial24.jpg" },
+        { id: "brspecial25", nome: "Brasil Special 2025", foto: "camisolas/brspecial25.jpg" },
+
+        // --- RETRO E EDIÇÕES ESPECIAIS ---
+        { id: "brretro70", nome: "Brasil Retro 1970", foto: "camisolas/brretro70.jpg" },
+        { id: "brretro90", nome: "Brasil Retro 1990", foto: "camisolas/brretro90.jpg" },
+        { id: "brretro94", nome: "Brasil Retro 1994", foto: "camisolas/brretro94.jpg" },
+        { id: "brretro04", nome: "Brasil Retro 2004", foto: "camisolas/brretro04.jpg" },
+        { id: "brretro06", nome: "Brasil Retro 2006", foto: "camisolas/brretro06.jpg" },
+        { id: "brpele", nome: "Brasil Edição Pelé", foto: "camisolas/brpele.jpg" },
+        { id: "brjesus26", nome: "Brasil Gabriel Jesus 2026", foto: "camisolas/brjesus26.jpg" },
+        
+        // --- CONCEPTS E OUTROS ---
+        { id: "brblack22", nome: "Brasil Black Edition 2022", foto: "camisolas/brblack22.jpg" },
+        { id: "brblue22", nome: "Brasil Blue Concept 2022", foto: "camisolas/brblue22.jpg" },
+        { id: "brconcept26", nome: "Brasil Concept 2026", foto: "camisolas/brconcept26.jpg" },
+        { id: "brtrain", nome: "Brasil Training Shirt", foto: "camisolas/brtrain.jpg" }
+    ],
+
+    // ... Ligas e outros itens ...
+};
 
         
 
