@@ -13,7 +13,7 @@ const baseDeDados = {
         { id: "pt_home26", nome: "Portugal Home 2026", foto: "camisolas/pthome26.jpg" },
         { id: "pt_away26", nome: "Portugal Away 2026", foto: "camisolas/ptaway26.jpg" },
         { id: "pt_prematch26", nome: "Portugal Pre-Match 2026", foto: "camisolas/pt_pre_jogo26.jpg" },
-        { id: "pt_training26", nome: "Portugal Training Shirt 2026", foto: "camisolas/pttraing26.jpg" },
+        { id: "pt_training26", nome: "Portugal Training Shirt 2026", foto: "camisolas/pttraining26.jpg" },
 
         // --- ANO 2024 / 2025 ---
         { id: "pt_home24", nome: "Portugal Home 24/25", foto: "camisolas/24_25_pt_home.jpg" },
