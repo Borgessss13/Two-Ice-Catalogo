@@ -12,18 +12,14 @@ const baseDeDados = {
         // --- ANO 2026 (Mundial) ---
         { id: "pt_home26", nome: "Portugal Home 2026", foto: "camisolas/pthome26.jpg" },
         { id: "pt_away26", nome: "Portugal Away 2026", foto: "camisolas/ptaway26.jpg" },
-        { id: "pt_home_long26", nome: "Portugal Home Manga Comprida 2026", foto: "camisolas/pthomelong26.jpg" },
-        { id: "pt_away_long26", nome: "Portugal Away Manga Comprida 2026", foto: "camisolas/ptawaylong26.jpg" },
-        { id: "pt_prematch26", nome: "Portugal Pre-Match 2026", foto: "camisolas/ptprematch26.jpg" },
-        { id: "pt_training26", nome: "Portugal Training Shirt 2026", foto: "camisolas/pttraining26.jpg" },
-        { id: "pt_special26", nome: "Portugal Special Jersey 2026", foto: "camisolas/ptspecial26.jpg" },
-        { id: "pt_windbreaker26", nome: "Portugal Windbreaker 2026", foto: "camisolas/ptwind26.jpg" },
+        { id: "pt_prematch26", nome: "Portugal Pre-Match 2026", foto: "camisolas/pt_pre_jogo26.jpg" },
+        { id: "pt_training26", nome: "Portugal Training Shirt 2026", foto: "camisolas/pttraing26.jpg" },
 
         // --- ANO 2024 / 2025 ---
-        { id: "pt_home24", nome: "Portugal Home 24/25", foto: "camisolas/pthome24.jpg" },
-        { id: "pt_away24", nome: "Portugal Away 24/25", foto: "camisolas/ptaway24.jpg" },
-        { id: "pt_black_train24", nome: "Portugal Black Training 24", foto: "camisolas/ptblacktrain24.jpg" },
-        { id: "pt_special_red24", nome: "Portugal Special Edition Red 24", foto: "camisolas/ptspecialred24.jpg" },
+        { id: "pt_home24", nome: "Portugal Home 24/25", foto: "camisolas/24_25_pt_home.jpg" },
+        { id: "pt_away24", nome: "Portugal Away 24/25", foto: "camisolas/24_25_pt_away.jpg" },
+        { id: "pt_black_train24", nome: "Portugal Black Training 24", foto: "camisolas/24_25_pt_black_train.jpg" },
+        { id: "pt_special_red24", nome: "Portugal Special Edition Red 24", foto: "camisolas/pt_speciaç_red24.jpg" },
 
         // --- ANO 2022 / 2023 ---
         { id: "pt_home22", nome: "Portugal Home 2022", foto: "camisolas/pthome22.jpg" },
@@ -31,12 +27,12 @@ const baseDeDados = {
         { id: "pt_concept_black22", nome: "Portugal Concept Black 2022", foto: "camisolas/ptconceptblack22.jpg" },
 
         // --- RETRO (CLÁSSICAS) ---
-        { id: "pt_retro16", nome: "Portugal Retro 2016", foto: "camisolas/ptretro16.jpg" },
-        { id: "pt_retro10", nome: "Portugal Retro 2010", foto: "camisolas/ptretro10.jpg" },
-        { id: "pt_retro04", nome: "Portugal Retro 2004", foto: "camisolas/ptretro04.jpg" },
-        { id: "pt_retro02", nome: "Portugal Retro 2002", foto: "camisolas/ptretro02.jpg" },
-        { id: "pt_retro00", nome: "Portugal Retro 2000", foto: "camisolas/ptretro00.jpg" },
-        { id: "pt_retro98", nome: "Portugal Retro 1998", foto: "camisolas/ptretro98.jpg" },
+        { id: "pt_retro16", nome: "Portugal Retro 2016", foto: "camisolas/pt_home_retro16.jpg" },
+        { id: "pt_retro10", nome: "Portugal Retro 2010", foto: "camisolas/pt_away_etro10.jpg" },
+        { id: "pt_retro04", nome: "Portugal Retro 2004", foto: "camisolas/pt_home_retro04.jpg" },
+        { id: "pt_retro02", nome: "Portugal Retro 2002", foto: "camisolas/pt_home_retro02.jpg" },
+        { id: "pt_retro00", nome: "Portugal Retro 2000", foto: "camisolas/pt_home_retro00.jpg" },
+        { id: "pt_retro98", nome: "Portugal Retro 1998", foto: "camisolas/pt_away_retro98.jpg" },
         { id: "pt_eusebio", nome: "Portugal Tribute to Eusébio", foto: "camisolas/pteusebio.jpg" }
     ]
 };
