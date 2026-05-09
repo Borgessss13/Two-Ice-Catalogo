@@ -17,14 +17,30 @@
         <span></span>
     </div>
 
-    <!-- MENU LATERAL (Sidebar) -->
-    <div id="sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">×</a>
-        <h2 style="color: white; padding: 20px; font-family: 'Inter', sans-serif;">Menu</h2>
-        <a href="#" onclick="irParaSecao('selecoes')">⚽ Seleções</a>
-        <a href="#" onclick="irParaSecao('ligas')">🏆 Ligas</a>
-        <a href="https://instagram.com" target="_blank">📸 Instagram</a>
+  <!-- MENU LATERAL (Sidebar) -->
+<div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">×</a>
+    <h2 style="color: white; padding: 20px; font-family: 'Inter', sans-serif;">Menu</h2>
+    
+    <!-- Link Principal Seleções -->
+    <a href="javascript:void(0)" onclick="toggleSubMenu('sub-selecoes')">⚽ Seleções <span style="float:right">▾</span></a>
+    <!-- Sub-lista de Países -->
+    <div id="sub-selecoes" class="submenu">
+        <a href="#" onclick="irParaCategoria('portugal', 'Portugal')">🇵🇹 Portugal</a>
+        <a href="#" onclick="irParaCategoria('brasil', 'Brasil')">🇧🇷 Brasil</a>
+        <a href="#" onclick="irParaCategoria('inglaterra', 'Inglaterra')">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Inglaterra</a>
+        <a href="#" onclick="irParaCategoria('franca', 'França')">🇫🇷 França</a>
+        <a href="#" onclick="irParaCategoria('argentina', 'Argentina')">🇦🇷 Argentina</a>
+        <a href="#" onclick="irParaCategoria('alemanha', 'Alemanha')">🇩🇪 Alemanha</a>
+        <a href="#" onclick="irParaCategoria('espanha', 'Espanha')">🇪🇸 Espanha</a>
+        <a href="#" onclick="irParaCategoria('italia', 'Itália')">🇮🇹 Itália</a>
     </div>
+
+    <!-- Ligas (Podes fazer o mesmo se quiseres) -->
+    <a href="#" onclick="irParaSecao('ligas')">🏆 Ligas</a>
+    <a href="https://instagram.com" target="_blank">📸 Instagram</a>
+</div>
+
 
     <!-- BOTÃO RETROCEDER -->
     <button id="btn-retroceder" class="retroceder-fixo" onclick="mostrarHome()">✖ Sair</button>
