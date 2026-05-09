@@ -30,9 +30,9 @@ const menus = {
         { id: "brasil", nome: "Brasil", foto: "fotos/brasil.png" },
         { id: "argentina", nome: "Argentina", foto: "fotos/argentina.png" },
         { id: "franca", nome: "França", foto: "fotos/franca.jpeg" },
-        { id: "alemanha", nome: "Alemanha", foto: "fotos/alemanha.png" },
+        { id: "alemanha", nome: "Alemanha", foto: "fotos/alemanha1.png" },
         { id: "espanha", nome: "Espanha", foto: "fotos/espanha.png" },
-        { id: "inglaterra", nome: "Inglaterra", foto: "fotos/inglaterra.png" },
+        { id: "inglaterra", nome: "Inglaterra", foto: "fotos/inglaterra1.png" },
         { id: "italia", nome: "Itália", foto: "fotos/italia.png" }
     ],
     ligas: [
