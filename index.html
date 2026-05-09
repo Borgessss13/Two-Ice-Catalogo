@@ -1,48 +1,44 @@
-<!-- ÍCONE DO MENU (3 traços) -->
-<div id="menu-icon" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-
-<!-- MENU LATERAL (Sidebar) -->
-<div id="sidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">×</a>
-    <h2 style="color: white; padding: 20px;">Menu</h2>
-    <a href="#" onclick="irParaSecao('selecoes')">⚽ Seleções</a>
-    <a href="#" onclick="irParaSecao('ligas')">🏆 Ligas</a>
-    <a href="https://instagram.com" target="_blank">📸 Instagram</a>
-</div>
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Two Ice Store </title>
-    <!-- Google Fonts para um aspeto mais profissional -->
+    <title>Two Ice Store</title>
+    <!-- Google Fonts -->
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- BOTÃO RETROCEDER (Aparece via JS quando entras numa liga) -->
+    <!-- ÍCONE DO MENU (3 traços) -->
+    <div id="menu-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- MENU LATERAL (Sidebar) -->
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">×</a>
+        <h2 style="color: white; padding: 20px; font-family: 'Inter', sans-serif;">Menu</h2>
+        <a href="#" onclick="irParaSecao('selecoes')">⚽ Seleções</a>
+        <a href="#" onclick="irParaSecao('ligas')">🏆 Ligas</a>
+        <a href="https://instagram.com" target="_blank">📸 Instagram</a>
+    </div>
+
+    <!-- BOTÃO RETROCEDER -->
     <button id="btn-retroceder" class="retroceder-fixo" onclick="mostrarHome()">✖ Sair</button>
 
-    <!-- SECÇÃO PRINCIPAL (OCUPA A TELA TODA) -->
+    <!-- SECÇÃO PRINCIPAL (Hero) -->
     <header class="hero">
-        
-        <!-- Conteúdo Central: Logo e Chamada -->
         <div class="hero-content">
-            <img src="logo.jpegs" alt="Two Ice Store" class="logo-top">
+            <!-- Corrigido de logo.jpegs para logo.jpeg -->
+            <img src="logo.jpeg" alt="Two Ice Store" class="logo-top">
             <h1>Qualidade Premium ao Melhor Preço</h1>
             <p>As tuas camisolas favoritas de épocas clássicas e atuais.</p>
-            
-            <!-- Botão Transparente com Bordas -->
             <a href="#catalogo-section" class="btn-main">VER CATÁLOGO COMPLETO</a>
         </div>
 
-        <!-- As 3 Caixinhas de Motivos (No fundo da imagem) -->
         <div class="motivos-hero">
             <div class="motivo-card-hero">
                 <span>⭐</span>
@@ -60,24 +56,20 @@
                 <p>Feedback de centenas de clientes.</p>
             </div>
         </div>
-
     </header>
- <!-- CONTENTOR DE TOPO (LOGO + PESQUISA) -->
-<div class="header-search-wrapper">
-    <img src="logo.jpeg" alt="Two Ice Logo" class="search-logo">
-    
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Pesquisar camisolas..." onkeyup="filtrarCamisolas()">
-        <span class="search-icon">🔍</span>
+
+    <!-- CONTENTOR DE PESQUISA -->
+    <div class="header-search-wrapper">
+        <img src="logo.jpeg" alt="Two Ice Logo" class="search-logo">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Pesquisar camisolas..." onkeyup="filtrarCamisolas()">
+            <span class="search-icon">🔍</span>
+        </div>
     </div>
-</div>
 
     <!-- SECÇÃO DO CATÁLOGO -->
     <section id="catalogo-section">
-        <!-- O Breadcrumb será gerado pelo JavaScript (Ex: Portugal > Principal) -->
         <div id="breadcrumb"></div>
-        
-        <!-- Onde as camisolas e ligas vão aparecer dinamicamente -->
         <div id="lista"></div>
     </section>
 
