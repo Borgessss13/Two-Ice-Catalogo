@@ -316,3 +316,15 @@ body {
     font-size: 36px;
     margin-left: 50px;
 }
+/* Estilo para os submenus */
+.submenu {
+    display: none; /* Escondido por padrão */
+    background-color: #222;
+    padding-left: 20px;
+}
+
+.submenu a {
+    font-size: 16px !important;
+    padding: 10px 20px !important;
+    border-bottom: 1px solid #333;
+}
