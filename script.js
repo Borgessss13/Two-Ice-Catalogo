@@ -140,3 +140,36 @@ function criarCard(item, funcaoClique) {
 }
 
 document.addEventListener('DOMContentLoaded', mostrarHome);
+function filtrarCamisolas() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const btnRetro = document.getElementById('btn-retroceder');
+    
+    // Se o utilizador começar a escrever, escondemos os menus e o botão retroceder
+    if (input.length > 0) {
+        if (btnRetro) btnRetro.style.display = 'none';
+        listaDiv.innerHTML = '<div class="titulo-container"><h2 class="section-title">Resultados da Pesquisa</h2></div>';
+        let gridResultados = '<div class="sub-grid">';
+        let encontrou = false;
+
+        // Procura em todas as categorias da base de dados
+        for (let categoria in baseDeDados) {
+            baseDeDados[categoria].forEach(item => {
+                if (item.nome.toLowerCase().includes(input)) {
+                    gridResultados += criarCard(item, 'verDetalhesFinal');
+                    encontrou = true;
+                }
+            });
+        }
+
+        gridResultados += '</div>';
+        
+        if (encontrou) {
+            listaDiv.innerHTML += gridResultados;
+        } else {
+            listaDiv.innerHTML += '<p style="text-align:center; padding:40px; width:100%;">Nenhuma camisola encontrada para "' + input + '".</p>';
+        }
+    } else {
+        // Se apagar tudo, volta à Home
+        mostrarHome();
+    }
+}
