@@ -290,25 +290,25 @@ body {
 .sidebar {
     height: 100%;
     width: 0; /* Começa fechada */
-    position: fixed;
-    z-index: 9999; /* Fica à frente de TUDO */
+    position: fixed; /* Fixa o menu por CIMA do site */
+    z-index: 10000; /* Garante que fica à frente de tudo */
     top: 0;
     left: 0;
-    background-color: #000; /* Fundo preto sólido para destacar */
+    background-color: #000;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 80px; /* Espaço para o botão X */
+    padding-top: 60px;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.5);
 }
 
-/* Estilo dos Links no Menu */
+/* Links brancos para não desaparecerem */
 .sidebar a {
     padding: 15px 25px;
     text-decoration: none;
     font-size: 18px;
-    color: #ffffff !important; /* Força o texto a ser branco */
+    color: #fff !important;
     display: block;
     transition: 0.3s;
-    font-family: 'Inter', sans-serif;
     border-bottom: 1px solid #222;
 }
 
