@@ -1,9 +1,5 @@
 const listaDiv = document.getElementById('lista');
 
-// 1. BASE DE DADOS (Camisolas que aparecem após clicar no símbolo)
-const baseDeDados = {
-const listaDiv = document.getElementById('lista');
-
 // 1. BASE DE DADOS COMPLETA (Portugal e Brasil)
 const baseDeDados = {
     "portugal": [
@@ -46,7 +42,7 @@ const baseDeDados = {
         { nome: "Brasil Home 2024", foto: "camisolas/brhome24.jpg" },
         { nome: "Brasil Treino", foto: "camisolas/brtrain.jpg" },
         { nome: "Brasil Polo", foto: "camisolas/brpolo.jpg" },
-        { nome: "Brasil Jesus", foto: "camisolas/brjesus26.jpg" },
+        { nome: "Brasil Gabriel Jesus", foto: "camisolas/brjesus26.jpg" },
         // Especiais 2025/26
         { nome: "Brasil Special 26", foto: "camisolas/brspecial26.jpg" },
         { nome: "Brasil Special 26 (2)", foto: "camisolas/brspecial26 (2).jpg" },
@@ -95,7 +91,6 @@ const baseDeDados = {
     ]
 };
 
-// ... Mantém o resto das funções (mostrarHome, verSubCategoria, etc.) como estavam
 
 // 2. MENUS DA HOME (Símbolos das Seleções e Ligas)
 const menus = {
