@@ -194,33 +194,37 @@ function irParaSecao(tipo) {
         window.scrollTo(0, catalogo.offsetTop - 50);
     }, 300);
 }
-// 1. Função para abrir/fechar o submenu no menu lateral
-function toggleSubMenu(id) {
-    const submenu = document.getElementById(id);
-    if (submenu.style.display === "block") {
-        submenu.style.display = "none";
+// Abre e fecha o menu lateral principal
+function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    if (!sidebar.style.width || sidebar.style.width === "0px") {
+        sidebar.style.width = "250px";
     } else {
-        submenu.style.display = "block";
+        sidebar.style.width = "0px";
     }
 }
 
-// 2. FUNÇÃO PRINCIPAL: Fecha o menu, carrega os dados e faz scroll
-function irParaCategoria(id, nome) {
-    // Fecha o menu lateral
-    const sidebar = document.getElementById("sidebar");
-    sidebar.style.width = "0";
+// Abre e fecha a sub-lista de países dentro do menu
+function toggleSubMenu(id) {
+    const submenu = document.getElementById(id);
+    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+}
 
-    // Chama a tua função que já existe para carregar as camisolas
-    // Garante que o nome da função é exatamente verSubCategoria
+// A FUNÇÃO QUE PEDISTE: Fecha o menu, carrega a seleção e faz scroll
+function irParaCategoria(id, nome) {
+    // 1. Fecha o menu lateral imediatamente
+    const sidebar = document.getElementById("sidebar");
+    sidebar.style.width = "0px";
+
+    // 2. Carrega as camisolas (usa a função verSubCategoria que já criámos antes)
     verSubCategoria(id, nome);
 
-    // Faz o scroll automático e suave para a secção das camisolas
+    // 3. Desliza a página automaticamente para as camisolas
     const catalogo = document.getElementById("catalogo-section");
     if (catalogo) {
         window.scrollTo({
-            top: catalogo.offsetTop - 20, // Ajusta o valor se quiseres mais espaço no topo
+            top: catalogo.offsetTop - 20,
             behavior: 'smooth'
         });
     }
 }
-
