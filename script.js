@@ -1,90 +1,90 @@
 const listaDiv = document.getElementById('lista');
 
-// BASE DE DADOS COM OS TEUS FICHEIROS REAIS
+// 1. BASE DE DADOS COMPLETA (Usando os teus nomes de ficheiros reais)
 const baseDeDados = {
     "Portugal": [
         { nome: "Home 2026", foto: "camisolas/pthome26.jpg" },
         { nome: "Away 2026", foto: "camisolas/ptaway26.jpg" },
         { nome: "Pre-Jogo 2026", foto: "camisolas/pt_pre_jogo26.jpg" },
         { nome: "Training 2026", foto: "camisolas/pttraining26.jpg" },
-        { nome: "Treino Camuflagem", foto: "camisolas/pttraincamo26.jpg" },
-        { nome: "Manga Comprida Away", foto: "camisolas/ptaaymngcomp26.png" },
-        { nome: "Edição Aniversário", foto: "camisolas/pteditaniver26.png" },
-        { nome: "Home 24/25", foto: "camisolas/24_25_pt_home.jpg" },
-        { nome: "Away 24/25", foto: "camisolas/24_25_pt_away.jpg" },
-        { nome: "Black Training 24/25", foto: "camisolas/24_25_pt_black_train.jpg" },
-        { nome: "Special Red 24", foto: "camisolas/pt_speciaç_red24.jpg" },
-        { nome: "Retro 2016", foto: "camisolas/pt_home_retro16.jpg" },
-        { nome: "Retro 2010", foto: "camisolas/pt_away_retro010.jpg" },
         { nome: "Retro 2004", foto: "camisolas/pt_home_retro04.jpg" },
-        { nome: "Eusébio Tribute", foto: "camisolas/pteusebio.jpg" }
+        { nome: "Eusébio Tribute", foto: "camisolas/pteusebio.jpg" },
+        { nome: "Edição Aniversário", foto: "camisolas/pteditaniver26.png" }
     ],
     "Brasil": [
         { nome: "Home 2026", foto: "camisolas/brhome26.jpg" },
         { nome: "Away 2026", foto: "camisolas/braway26.jpg" },
-        { nome: "Home 2024", foto: "camisolas/brhome24.jpg" },
         { nome: "Special 2026", foto: "camisolas/brspecial26.jpg" },
-        { nome: "Special 2026 (V2)", foto: "camisolas/brspecial26 (2).jpg" },
-        { nome: "Special 2025", foto: "camisolas/brspecial25.jpg" },
         { nome: "Retro 1970", foto: "camisolas/brretro70.jpg" },
-        { nome: "Retro 1994", foto: "camisolas/brretro94.jpg" },
         { nome: "Edição Pelé", foto: "camisolas/brpele.jpg" },
         { nome: "Brasil Stussy 25", foto: "camisolas/BrStussy25.jpg" }
     ],
-    "Ligas": [
-        { nome: "Sporting CP", foto: "fotos/sporting.png" },
+    "Ligas e Clubes": [
+        { nome: "Liga Portugal", foto: "fotos/ligaportugal.png" },
         { nome: "FC Porto", foto: "fotos/porto.jpg" },
-        { nome: "SL Benfica", foto: "fotos/benfica.png" }
+        { nome: "Sporting CP", foto: "fotos/sporting.png" },
+        { nome: "SL Benfica", foto: "fotos/benfica.png" },
+        { nome: "Premier League", foto: "fotos/premierligue.jpg" },
+        { nome: "La Liga", foto: "fotos/laliga.png" },
+        { nome: "Bundesliga", foto: "fotos/bundesligue.png" },
+        { nome: "Serie A", foto: "fotos/seriea.jpg" },
+        { nome: "Ligue 1", foto: "fotos/ligue1.png" },
+        { nome: "Brasileirão", foto: "fotos/brasileirao1.png" },
+        { nome: "Saudi Pro League", foto: "fotos/saudi.png" }
+    ],
+    "Outras Seleções": [
+        { nome: "Alemanha", foto: "fotos/alemanha.png" },
+        { nome: "Argentina", foto: "fotos/argentina.png" },
+        { nome: "França", foto: "fotos/franca.jpeg" },
+        { nome: "Espanha", foto: "fotos/espanha.png" },
+        { nome: "Inglaterra", foto: "fotos/inglaterra.png" },
+        { nome: "Itália", foto: "fotos/italia.png" }
     ]
 };
 
+// 2. FUNÇÃO PARA CARREGAR O CATÁLOGO (Catálogo Corrido)
 function carregarCatalogo() {
     if(!listaDiv) return;
     listaDiv.innerHTML = ""; 
 
     for (let categoria in baseDeDados) {
+        // Criar o título da secção
         listaDiv.innerHTML += `
             <div class="titulo-container">
                 <h2 class="section-title">${categoria}</h2>
             </div>
         `;
 
+        // Criar a grelha de cards
         let gridHtml = '<div class="sub-grid">';
+        
         baseDeDados[categoria].forEach(item => {
             gridHtml += `
                 <div class="card" onclick="window.open('https://instagram.com', '_blank')">
-                    <img src="${item.foto}" alt="${item.nome}" onerror="this.src='https://placehold.co...'">
+                    <img src="${item.foto}" alt="${item.nome}" onerror="this.src='https://placehold.co'">
                     <h3>${item.nome}</h3>
                     <button class="btn-insta">Ver no Instagram</button>
                 </div>
             `;
         });
+
         gridHtml += '</div>';
         listaDiv.innerHTML += gridHtml;
     }
 }
 
-document.addEventListener('DOMContentLoaded', carregarCatalogo);
-
-// Funções do Menu Lateral (apenas para scroll)
+// 3. FUNÇÃO DO MENU LATERAL (Apenas para Scroll)
 function toggleMenu() {
     const sidebar = document.getElementById("sidebar");
-    sidebar.style.width = (sidebar.style.width === "250px") ? "0" : "250px";
+    if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+    } else {
+        sidebar.style.width = "250px";
+    }
 }
 
-
-// 2. MENUS DA HOME
-const menus = {
-    selecoes: [
-        { id: "portugal", nome: "Portugal", foto: "fotos/portugal.png" },
-        { id: "brasil", nome: "Brasil", foto: "fotos/brasil.png" }
-    ],
-    ligas: [
-        { id: "liga_pt", nome: "Liga Portugal", foto: "fotos/ligaportugal.png" },
-        { id: "premier", nome: "Premier League", foto: "fotos/premierligue.jpg" },
-        { id: "laliga", nome: "La Liga", foto: "fotos/laliga.png" }
-    ]
-};
+// Inicializar quando a página carrega
+document.addEventListener('DOMContentLoaded', carregarCatalogo);
 
 // 3. FUNÇÕES DE NAVEGAÇÃO
 function mostrarHome() {
