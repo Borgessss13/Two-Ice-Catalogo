@@ -42,7 +42,7 @@ const baseDeDados = {
         { nome: "Brasil Home 2024", foto: "camisolas/brhome24.jpg" },
         { nome: "Brasil Treino", foto: "camisolas/brtrain.jpg" },
         { nome: "Brasil Polo", foto: "camisolas/brpolo.jpg" },
-        { nome: "Brasil Gabriel Jesus", foto: "camisolas/brjesus26.jpg" },
+        { nome: "Brasil Jesus Rosa", foto: "camisolas/brjesus26.jpg" },
         // Especiais 2025/26
         { nome: "Brasil Special 26", foto: "camisolas/brspecial26.jpg" },
         { nome: "Brasil Special 26 (2)", foto: "camisolas/brspecial26 (2).jpg" },
