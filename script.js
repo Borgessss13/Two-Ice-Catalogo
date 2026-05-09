@@ -194,3 +194,23 @@ function irParaSecao(tipo) {
         window.scrollTo(0, catalogo.offsetTop - 50);
     }, 300);
 }
+// Função para abrir/fechar o submenu de países
+function toggleSubMenu(id) {
+    const submenu = document.getElementById(id);
+    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+}
+
+// Função para ir direto para um país específico
+function irParaCategoria(id, nome) {
+    toggleMenu(); // Fecha o menu lateral
+    verSubCategoria(id, nome); // Chama a tua função que já mostra as camisolas
+    
+    // Faz scroll suave para a secção do catálogo
+    const catalogo = document.getElementById("catalogo-section");
+    if (catalogo) {
+        window.scrollTo({
+            top: catalogo.offsetTop - 50,
+            behavior: 'smooth'
+        });
+    }
+}
