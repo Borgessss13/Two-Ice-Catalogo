@@ -284,47 +284,66 @@ body {
     transition: 0.4s;
 }
 
-/* Sidebar (Menu Lateral) */
+/* ============================================================
+   MENU LATERAL (SIDEBAR) - CORRIGIDO
+   ============================================================ */
 .sidebar {
     height: 100%;
-    width: 0;
+    width: 0; /* Começa fechada */
     position: fixed;
-    z-index: 2000;
+    z-index: 9999; /* Fica à frente de TUDO */
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #000; /* Fundo preto sólido para destacar */
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 80px; /* Espaço para o botão X */
 }
 
+/* Estilo dos Links no Menu */
 .sidebar a {
-    padding: 15px 30px;
+    padding: 15px 25px;
     text-decoration: none;
-    font-size: 20px;
-    color: #818181;
+    font-size: 18px;
+    color: #ffffff !important; /* Força o texto a ser branco */
     display: block;
     transition: 0.3s;
+    font-family: 'Inter', sans-serif;
+    border-bottom: 1px solid #222;
 }
 
-.sidebar a:hover { color: #f1f1f1; }
-
-.sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+.sidebar a:hover {
+    background-color: #333;
 }
-/* Estilo para os submenus */
+
+/* Submenu dos Países */
 .submenu {
-    display: none; /* Escondido por padrão */
-    background-color: #222;
-    padding-left: 20px;
+    display: none; 
+    background-color: #111;
 }
 
 .submenu a {
+    padding-left: 50px !important; /* Mais recuado */
     font-size: 16px !important;
-    padding: 10px 20px !important;
-    border-bottom: 1px solid #333;
+    color: #ccc !important;
 }
+
+/* Botão de Fechar (X) */
+.sidebar .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    color: white !important;
+    border: none;
+}
+
+/* Título do Menu */
+.sidebar h2 {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
