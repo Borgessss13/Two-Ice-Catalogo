@@ -173,3 +173,24 @@ function filtrarCamisolas() {
         mostrarHome();
     }
 }
+// Abre e fecha o menu lateral
+function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+    } else {
+        sidebar.style.width = "250px";
+    }
+}
+
+// Salta para a secção e fecha o menu
+function irParaSecao(tipo) {
+    toggleMenu(); // Fecha o menu
+    mostrarHome(); // Garante que estamos na home
+    
+    // Pequeno atraso para dar tempo de fechar o menu antes de fazer scroll
+    setTimeout(() => {
+        const catalogo = document.getElementById("catalogo-section");
+        window.scrollTo(0, catalogo.offsetTop - 50);
+    }, 300);
+}
