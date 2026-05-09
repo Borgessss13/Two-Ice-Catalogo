@@ -82,22 +82,12 @@ function verDetalhesFinal(id, nome) {
 // 4. FUNÇÕES DO MENU LATERAL
 function toggleMenu() {
     const sidebar = document.getElementById("sidebar");
-    sidebar.style.width = (sidebar.style.width === "250px") ? "0" : "250px";
-}
-
-function toggleSubMenu(id) {
-    const submenu = document.getElementById(id);
-    submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
-}
-
-function irParaCategoria(id, nome) {
-    toggleMenu(); // Fecha o menu
-    verSubCategoria(id, nome); // Carrega as fotos
-    
-    setTimeout(() => {
-        const catalogo = document.getElementById("catalogo-section");
-        window.scrollTo({ top: catalogo.offsetTop - 20, behavior: 'smooth' });
-    }, 300);
+    // Verifica se está vazio ou se é 0 para abrir
+    if (sidebar.style.width === "" || sidebar.style.width === "0px" || sidebar.style.width === "0") {
+        sidebar.style.width = "250px";
+    } else {
+        sidebar.style.width = "0";
+    }
 }
 
 // 5. AUXILIARES
