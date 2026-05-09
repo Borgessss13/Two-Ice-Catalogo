@@ -229,3 +229,37 @@ body {
     font-size: 20px;
     color: #888;
 }
+/* Contentor que junta o logo e a barra */
+.header-search-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espaço entre o logo e a barra */
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Tamanho do logo ao lado da pesquisa */
+.search-logo {
+    width: 60px; /* Tamanho pequeno para não roubar espaço */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Ajuste da barra de pesquisa para não ocupar a largura toda sozinha */
+.search-container {
+    flex: 1; /* Faz a barra ocupar o resto do espaço disponível */
+    margin: 0; /* Remove a margem automática anterior */
+}
+
+/* Ajuste para Telemóvel: Logo em cima, Barra em baixo */
+@media (max-width: 600px) {
+    .header-search-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .search-logo {
+        width: 80px;
+    }
+}
