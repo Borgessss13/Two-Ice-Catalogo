@@ -194,23 +194,33 @@ function irParaSecao(tipo) {
         window.scrollTo(0, catalogo.offsetTop - 50);
     }, 300);
 }
-// Função para abrir/fechar o submenu de países
+// 1. Função para abrir/fechar o submenu no menu lateral
 function toggleSubMenu(id) {
     const submenu = document.getElementById(id);
-    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+    if (submenu.style.display === "block") {
+        submenu.style.display = "none";
+    } else {
+        submenu.style.display = "block";
+    }
 }
 
-// Função para ir direto para um país específico
+// 2. FUNÇÃO PRINCIPAL: Fecha o menu, carrega os dados e faz scroll
 function irParaCategoria(id, nome) {
-    toggleMenu(); // Fecha o menu lateral
-    verSubCategoria(id, nome); // Chama a tua função que já mostra as camisolas
-    
-    // Faz scroll suave para a secção do catálogo
+    // Fecha o menu lateral
+    const sidebar = document.getElementById("sidebar");
+    sidebar.style.width = "0";
+
+    // Chama a tua função que já existe para carregar as camisolas
+    // Garante que o nome da função é exatamente verSubCategoria
+    verSubCategoria(id, nome);
+
+    // Faz o scroll automático e suave para a secção das camisolas
     const catalogo = document.getElementById("catalogo-section");
     if (catalogo) {
         window.scrollTo({
-            top: catalogo.offsetTop - 50,
+            top: catalogo.offsetTop - 20, // Ajusta o valor se quiseres mais espaço no topo
             behavior: 'smooth'
         });
     }
 }
+
