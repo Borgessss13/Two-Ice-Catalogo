@@ -2,30 +2,100 @@ const listaDiv = document.getElementById('lista');
 
 // 1. BASE DE DADOS (Camisolas que aparecem após clicar no símbolo)
 const baseDeDados = {
+const listaDiv = document.getElementById('lista');
+
+// 1. BASE DE DADOS COMPLETA (Portugal e Brasil)
+const baseDeDados = {
     "portugal": [
-        { nome: "Home 2026", foto: "camisolas/pthome26.jpg" },
-        { nome: "Away 2026", foto: "camisolas/ptaway26.jpg" },
-        { nome: "Pre-Jogo 2026", foto: "camisolas/pt_pre_jogo26.jpg" },
-        { nome: "Training 2026", foto: "camisolas/pttraining26.jpg" },
-        { nome: "Retro 2004", foto: "camisolas/pt_home_retro04.jpg" },
-        { nome: "Eusébio Tribute", foto: "camisolas/pteusebio.jpg" }
+        // Época 2026
+        { nome: "Portugal Home 2026", foto: "camisolas/pthome26.jpg" },
+        { nome: "Portugal Away 2026", foto: "camisolas/ptaway26.jpg" },
+        { nome: "Portugal Pre-Jogo 2026", foto: "camisolas/pt_pre_jogo26.jpg" },
+        { nome: "Portugal Treino 2026", foto: "camisolas/pttraining26.jpg" },
+        { nome: "Portugal Treino 26 (v2)", foto: "camisolas/pttrain26.png" },
+        { nome: "Portugal Treino 26 (v3)", foto: "camisolas/pttrain226.png" },
+        { nome: "Portugal Treino Camuflagem", foto: "camisolas/pttraincamo26.jpg" },
+        { nome: "Portugal Manga Comprida Away", foto: "camisolas/ptaaymngcomp26.png" },
+        { nome: "Portugal Edição Aniversário", foto: "camisolas/pteditaniver26.png" },
+        { nome: "Portugal Especial 2026", foto: "camisolas/ptspecial26.jpg" },
+        // Época 2024/25
+        { nome: "Portugal Home 24/25", foto: "camisolas/24_25_pt_home.jpg" },
+        { nome: "Portugal Away 24/25", foto: "camisolas/24_25_pt_away.jpg" },
+        { nome: "Portugal Treino Black 24/25", foto: "camisolas/24_25_pt_black_train.jpg" },
+        { nome: "Portugal Especial Red 24", foto: "camisolas/pt_speciaç_red24.jpg" },
+        { nome: "Portugal Home 24 (v2)", foto: "camisolas/pthome24.jpeg" },
+        // Época 2022
+        { nome: "Portugal Home 2022", foto: "camisolas/pthome22.jpg" },
+        { nome: "Portugal Away 2022", foto: "camisolas/ptaway22.jpg" },
+        { nome: "Portugal Concept Black 22", foto: "camisolas/ptconceptblack22.jpg" },
+        // Retrô
+        { nome: "Portugal Retro 2016", foto: "camisolas/pt_home_retro16.jpg" },
+        { nome: "Portugal Retro 2010 (Away)", foto: "camisolas/pt_away_retro010.jpg" },
+        { nome: "Portugal Retro 2006", foto: "camisolas/pt_home_retro06.jpg" },
+        { nome: "Portugal Retro 2004", foto: "camisolas/pt_home_retro04.jpg" },
+        { nome: "Portugal Retro 2002", foto: "camisolas/pt_home_retro02.jpg" },
+        { nome: "Portugal Retro 2000", foto: "camisolas/pt_home_retro00.jpg" },
+        { nome: "Portugal Retro 1998 (Away)", foto: "camisolas/pt_away_retro98.jpg" },
+        { nome: "Portugal Tributo Eusébio", foto: "camisolas/pteusebio.jpg" }
     ],
     "brasil": [
-        { nome: "Home 2026", foto: "camisolas/brhome26.jpg" },
-        { nome: "Away 2026", foto: "camisolas/braway26.jpg" },
-        { nome: "Special 2026", foto: "camisolas/brspecial26.jpg" },
-        { nome: "Retro 1970", foto: "camisolas/brretro70.jpg" }
+        // Época 2026 e Recentes
+        { nome: "Brasil Home 2026", foto: "camisolas/brhome26.jpg" },
+        { nome: "Brasil Away 2026", foto: "camisolas/braway26.jpg" },
+        { nome: "Brasil World Cup 2026", foto: "camisolas/brwc26.jpg" },
+        { nome: "Brasil Home 2024", foto: "camisolas/brhome24.jpg" },
+        { nome: "Brasil Treino", foto: "camisolas/brtrain.jpg" },
+        { nome: "Brasil Polo", foto: "camisolas/brpolo.jpg" },
+        { nome: "Brasil Jesus", foto: "camisolas/brjesus26.jpg" },
+        // Especiais 2025/26
+        { nome: "Brasil Special 26", foto: "camisolas/brspecial26.jpg" },
+        { nome: "Brasil Special 26 (2)", foto: "camisolas/brspecial26 (2).jpg" },
+        { nome: "Brasil Special 26 (3)", foto: "camisolas/brspecial26 (3).jpg" },
+        { nome: "Brasil Special 26 (4)", foto: "camisolas/brspecial26 (4).jpg" },
+        { nome: "Brasil Special 26 (5)", foto: "camisolas/brspecial26 (5).jpg" },
+        { nome: "Brasil Special 26 (6)", foto: "camisolas/brspecial26 (6).jpg" },
+        { nome: "Brasil Special 25", foto: "camisolas/brspecial25.jpg" },
+        { nome: "Brasil Special 25 (2)", foto: "camisolas/brspecial25 (2).jpg" },
+        { nome: "Brasil Special 25 (3)", foto: "camisolas/brspecial25 (3).jpg" },
+        { nome: "Brasil Special 24", foto: "camisolas/brspecial24.jpg" },
+        { nome: "Brasil Stussy 25", foto: "camisolas/BrStussy25.jpg" },
+        // Época 2022
+        { nome: "Brasil World Cup 2022", foto: "camisolas/brwc22.jpg" },
+        { nome: "Brasil Black 2022", foto: "camisolas/brblack22.jpg" },
+        { nome: "Brasil Blue 2022", foto: "camisolas/brblue22.jpg" },
+        { nome: "Brasil White 2022", foto: "camisolas/brwhite22.jpg" },
+        { nome: "Brasil Yellow 2022", foto: "camisolas/bryellow22.jpg" },
+        { nome: "Brasil Train Light 22", foto: "camisolas/brtrainlight22.jpg" },
+        { nome: "Brasil Special 22", foto: "camisolas/brspecial22.jpg" },
+        { nome: "Brasil Special 22 (1)", foto: "camisolas/brspecial22(1).jpg" },
+        { nome: "Brasil Special 22 (2)", foto: "camisolas/brspecial22(2).jpg" },
+        // Retrô e Concepts
+        { nome: "Brasil Retro 70", foto: "camisolas/brretro70.jpg" },
+        { nome: "Brasil Retro 93", foto: "camisolas/brretro93.jpg" },
+        { nome: "Brasil Retro 94", foto: "camisolas/brretro94.jpg" },
+        { nome: "Brasil Retro 98", foto: "camisolas/brretro98.jpg" },
+        { nome: "Brasil Retro 98 (2)", foto: "camisolas/brretro98 (2).jpg" },
+        { nome: "Brasil Retro 04", foto: "camisolas/brretro04.jpg" },
+        { nome: "Brasil Retro 04 Home", foto: "camisolas/brretro04home.jpg" },
+        { nome: "Brasil Retro 06", foto: "camisolas/brretro06.jpg" },
+        { nome: "Brasil Retro Soldier", foto: "camisolas/brretro soldier.jpg" },
+        { nome: "Brasil Edição Pelé", foto: "camisolas/brpele.jpg" },
+        { nome: "Brasil Concept 26", foto: "camisolas/brconcept26.jpg" },
+        { nome: "Brasil Concept B 22", foto: "camisolas/brconceptb22.jpg" },
+        { nome: "Brasil Concept W 22", foto: "camisolas/brconceptw22.jpg" },
+        { nome: "Brasil Concept Y 22", foto: "camisolas/brconcepty22.jpg" },
+        { nome: "Brasil Away 18", foto: "camisolas/braway18.jpg" },
+        { nome: "Brasil Away 19", foto: "camisolas/braway19.jpg" },
+        { nome: "Brasil Home 18", foto: "camisolas/brhome18.jpg" }
     ],
     "liga_pt": [
         { nome: "Sporting CP", foto: "fotos/sporting.png" },
         { nome: "FC Porto", foto: "fotos/porto.jpg" },
         { nome: "SL Benfica", foto: "fotos/benfica.png" }
-    ],
-    "premier": [
-        { nome: "Manchester City", foto: "fotos/mancity.png" },
-        { nome: "Liverpool FC", foto: "fotos/liverpool.png" }
     ]
 };
+
+// ... Mantém o resto das funções (mostrarHome, verSubCategoria, etc.) como estavam
 
 // 2. MENUS DA HOME (Símbolos das Seleções e Ligas)
 const menus = {
