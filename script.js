@@ -49,49 +49,22 @@ function mostrarHome() {
     const btnRetro = document.getElementById('btn-retroceder');
     if (btnRetro) btnRetro.style.display = 'none';
     
-    listaDiv.innerHTML = '';
+    // Usamos uma variável temporária para construir o HTML e injetar de uma só vez
+    let htmlContent = '';
 
-    listaDiv.innerHTML += '<div class="titulo-container"><h2 class="section-title">Seleções</h2></div>';
-    let gridSel = '<div class="sub-grid">';
-    menus.selecoes.forEach(item => { gridSel += criarCard(item, 'verSubCategoria'); });
-    gridSel += '</div>';
-    listaDiv.innerHTML += gridSel;
+    // Bloco Seleções
+    htmlContent += '<div class="titulo-container"><h2 class="section-title">Seleções</h2></div>';
+    htmlContent += '<div class="sub-grid">';
+    menus.selecoes.forEach(item => { htmlContent += criarCard(item, 'verSubCategoria'); });
+    htmlContent += '</div>';
 
-    listaDiv.innerHTML += '<div class="titulo-container"><h2 class="section-title">Ligas</h2></div>';
-    let gridLig = '<div class="sub-grid">';
-    menus.ligas.forEach(item => { gridLig += criarCard(item, 'verSubCategoria'); });
-    gridLig += '</div>';
-    listaDiv.innerHTML += gridLig;
-}
+    // Bloco Ligas
+    htmlContent += '<div class="titulo-container"><h2 class="section-title">Ligas</h2></div>';
+    htmlContent += '<div class="sub-grid">';
+    menus.ligas.forEach(item => { htmlContent += criarCard(item, 'verSubCategoria'); });
+    htmlContent += '</div>';
 
-function verSubCategoria(id, nome) {
-    const btnRetro = document.getElementById('btn-retroceder');
-    if (btnRetro) btnRetro.style.display = 'block';
-    
-    listaDiv.innerHTML = `<div class="titulo-container"><h2 class="section-title">${nome}</h2></div>`;
-    const itens = baseDeDados[id];
-
-    if (!itens) {
-        listaDiv.innerHTML += `<p style="text-align:center; padding:40px; width:100%;">Catálogo de ${nome} brevemente disponível.</p>`;
-        return;
-    }
-
-    let gridItens = '<div class="sub-grid">';
-    itens.forEach(item => { gridItens += criarCard(item, 'verDetalhesFinal'); });
-    gridItens += '</div>';
-    listaDiv.innerHTML += gridItens;
-    
-    window.scrollTo(0, document.getElementById("catalogo-section").offsetTop - 50);
-}
-
-function verDetalhesFinal(id, nome) {
-    listaDiv.innerHTML = `
-        <div class="titulo-container"><h2 class="section-title">${nome}</h2></div>
-        <div style="text-align:center; padding:60px; width:100%;">
-            <p style="margin-bottom:20px; font-size:18px;">Gostaste da camisola <strong>${nome}</strong>?</p>
-            <button class="btn-insta" onclick="window.open('https://instagram.com', '_blank')">CONSULTAR NO INSTAGRAM</button>
-        </div>
-    `;
+    listaDiv.innerHTML = htmlContent;
 }
 
 // 5. FUNÇÕES DO MENU LATERAL (SIDEBAR)
