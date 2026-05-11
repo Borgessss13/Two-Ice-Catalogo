@@ -78,7 +78,7 @@ const baseDeDados = {
     ],
     "sporting": [
         { nome: "SCP 24/25", foto: "camisolas/scp2425.jpg" },
-        { nome: "SCP Apricot Train Fan 25/26", foto: "camisolas/scpapricottrainfan2526.jpg" },
+        { nome: "SCP Apricot Train Fan 25/26", foto: "camisolas/scpapricottrainfan2526.jpeg" },
         { nome: "SCP Away 21/22", foto: "camisolas/scpaway2122.jpg" },
         { nome: "SCP Away 22/23", foto: "camisolas/scpaway2223.jpg" },
         { nome: "SCP Away 23/24", foto: "camisolas/scpaway2324.jpg" },
@@ -100,7 +100,7 @@ const baseDeDados = {
         { nome: "SCP Pre-Match 24/25", foto: "camisolas/scpprematch2425.jpg" },
         { nome: "SCP Pre-Match 26/27", foto: "camisolas/scpprematch2627.jpg" },
         { nome: "SCP Retro 94/95", foto: "camisolas/scpretro9495.jpg" },
-        { nome: "SCP Retro Home 01/02", foto: "camisolas/scpretrohome0102.jpg" },
+        { nome: "SCP Retro Home 01/02", foto: "camisolas/scpretrohome0103.jpg" },
         { nome: "SCP Spec Edit 25/26", foto: "camisolas/scpspecedit2526.jpeg" },
         { nome: "SCP Spec Edit 22 25/26", foto: "camisolas/scpspecedit22526.jpeg" },
         { nome: "SCP Stromp 24/25", foto: "camisolas/scpstromp2425.jpg" },
