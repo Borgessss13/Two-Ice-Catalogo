@@ -121,6 +121,8 @@ const baseDeDados = {
         { nome: "Sporting CP", foto: "fotos/sporting.png" },
         { nome: "FC Porto", foto: "fotos/porto.jpg" },
         { nome: "SL Benfica", foto: "fotos/benfica.png" }
+        ]
+    },
  
 
 // 2. MENUS DA HOME (Símbolos das Seleções e Ligas)
