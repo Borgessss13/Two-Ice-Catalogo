@@ -124,11 +124,6 @@ const baseDeDados = {
         { nome: "SCP Train 22 25/26", foto: "scptrain22526.jpeg" },
         { nome: "SCP Train Fan Black 25/26", foto: "scptrainfanblack2526.jpeg" }
     ],
-    "liga_pt": [
-        { nome: "Sporting CP", foto: "fotos/sporting.png", id: "sporting" }, // Adicionei o ID aqui
-        { nome: "FC Porto", foto: "fotos/porto.jpg" },
-        { nome: "SL Benfica", foto: "fotos/benfica.png" }
-    ]
 };
 
 
