@@ -84,14 +84,7 @@ const baseDeDados = {
         { nome: "Brasil Away 19", foto: "camisolas/braway19.jpg" },
         { nome: "Brasil Home 18", foto: "camisolas/brhome18.jpg" }
     ],
-    "liga_pt": [
-        { nome: "Sporting CP", foto: "fotos/sporting.png" },
-        { nome: "FC Porto", foto: "fotos/porto.jpg" },
-        { nome: "SL Benfica", foto: "fotos/benfica.png" }
-    ],
-        // ... (fim da lista do brasil)
-    ],
-    "sporting": [
+     "sporting": [
         { nome: "SCP 24/25", foto: "scp2425.jpeg" },
         { nome: "SCP Apricot Train Fan 25/26", foto: "scpapricottrainfan2526.jpeg" },
         { nome: "SCP Away 21/22", foto: "scpaway2122.jpeg" },
@@ -124,9 +117,11 @@ const baseDeDados = {
         { nome: "SCP Train 22 25/26", foto: "scptrain22526.jpeg" },
         { nome: "SCP Train Fan Black 25/26", foto: "scptrainfanblack2526.jpeg" }
     ],
-};
-
-
+    "liga_pt": [
+        { nome: "Sporting CP", foto: "fotos/sporting.png" },
+        { nome: "FC Porto", foto: "fotos/porto.jpg" },
+        { nome: "SL Benfica", foto: "fotos/benfica.png" }
+ 
 
 // 2. MENUS DA HOME (Símbolos das Seleções e Ligas)
 const menus = {
