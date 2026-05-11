@@ -109,6 +109,28 @@ const baseDeDados = {
         { nome: "SCP Train 22 25/26", foto: "camisolas/scptrain22526.jpeg" },
         { nome: "SCP Train Fan Black 25/26", foto: "camisolas/scptrainfanblack2526.jpeg" }
     ],
+        "porto": [
+        { nome: "FCP 25/26", foto: "camisolas/fcp2526.jpg" },
+        { nome: "FCP Training 25/26", foto: "camisolas/fcp22526.jpg" },
+        { nome: "FCP Away 22/23", foto: "camisolas/fcpaway2223.jpg" },
+        { nome: "FCP Away 23/24", foto: "camisolas/fcpaway2324.jpg" },
+        { nome: "FCP Away 24/25", foto: "camisolas/fcpaway2425.jpg" },
+        { nome: "FCP Away 25/26", foto: "camisolas/fcpaway2526.jpg" },
+        { nome: "FCP Away (v2) 23/24", foto: "camisolas/fcpaway22324.jpg" },
+        { nome: "FCP Away (v2) 24/25", foto: "camisolas/fcpaway22425.jpg" },
+        { nome: "FCP Home 22/23", foto: "camisolas/fcphome2223.jpg" },
+        { nome: "FCP Home 23/24", foto: "camisolas/fcphome2324.jpg" },
+        { nome: "FCP Home 24/25", foto: "camisolas/fcphome2425.jpg" },
+        { nome: "FCP Home 25/26", foto: "camisolas/fcphome2526.jpg" },
+        { nome: "FCP Home (v2) 25/26", foto: "camisolas/fcphome22526.jpg" },
+        { nome: "FCP Retro 17/18", foto: "camisolas/fcphomeretro1718.jpg" },
+        { nome: "FCP Retro 86/87", foto: "camisolas/fcphomeretro8687.jpg" },
+        { nome: "FCP Special 26/27", foto: "camisolas/fcpspec2627.jpg" },
+        { nome: "FCP Special Edit 25/26", foto: "camisolas/fcpspecedit2526.jpg" },
+        { nome: "FCP Special Edit (v2) 25/26", foto: "camisolas/fcpspecedit22526.jpg" },
+        { nome: "FCP Special Edit Red 25/26", foto: "camisolas/fcpspeceditred2526.jpg" }
+    ],
+
     "liga_pt": [
         { id: "sporting", nome: "Sporting CP", foto: "fotos/sporting.png" },
         { id: "porto", nome: "FC Porto", foto: "fotos/porto.jpg" },
