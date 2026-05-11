@@ -88,8 +88,49 @@ const baseDeDados = {
         { nome: "Sporting CP", foto: "fotos/sporting.png" },
         { nome: "FC Porto", foto: "fotos/porto.jpg" },
         { nome: "SL Benfica", foto: "fotos/benfica.png" }
+    ],
+        // ... (fim da lista do brasil)
+    ],
+    "sporting": [
+        { nome: "SCP 24/25", foto: "scp2425.jpeg" },
+        { nome: "SCP Apricot Train Fan 25/26", foto: "scpapricottrainfan2526.jpeg" },
+        { nome: "SCP Away 21/22", foto: "scpaway2122.jpeg" },
+        { nome: "SCP Away 22/23", foto: "scpaway2223.jpeg" },
+        { nome: "SCP Away 23/24", foto: "scpaway2324.jpeg" },
+        { nome: "SCP Away 24/25", foto: "scpaway2425.jpeg" },
+        { nome: "SCP Away 25/26", foto: "scpaway2526.jpeg" },
+        { nome: "SCP Away 2 21/22", foto: "scpaway22122.jpeg" },
+        { nome: "SCP Champ 23/24", foto: "scpchamp2324.jpeg" },
+        { nome: "SCP Commemorative Edit 24/25", foto: "scpcommemorativeedit2425.jpeg" },
+        { nome: "SCP Fan 25/26", foto: "scpfan2526.jpeg" },
+        { nome: "SCP Goal Blue 25/26", foto: "scpgoalblue2526.jpeg" },
+        { nome: "SCP Home 22/23", foto: "scphome2223.jpeg" },
+        { nome: "SCP Home 23/24", foto: "scphome2324.jpeg" },
+        { nome: "SCP Home 25/26", foto: "scphome2526.jpeg" },
+        { nome: "SCP Pink October 24/25", foto: "scppinkoctober2425.jpeg" },
+        { nome: "SCP Player Away 23/24", foto: "scpplayeraway2324.jpeg" },
+        { nome: "SCP Player Away 24/25", foto: "scpplayeraway2425.jpeg" },
+        { nome: "SCP Player Home 23/24", foto: "scpplayerhome2324.jpeg" },
+        { nome: "SCP Player Home 25/26", foto: "scpplayerhome2526.jpeg" },
+        { nome: "SCP Pre-Match 24/25", foto: "scpprematch2425.jpeg" },
+        { nome: "SCP Pre-Match 26/27", foto: "scpprematch2627.jpeg" },
+        { nome: "SCP Retro 94/95", foto: "scpretro9495.jpeg" },
+        { nome: "SCP Retro Home 01/02", foto: "scpretrohome0102.jpeg" },
+        { nome: "SCP Spec Edit 25/26", foto: "scpspecedit2526.jpeg" },
+        { nome: "SCP Spec Edit 22 25/26", foto: "scpspecedit22526.jpeg" },
+        { nome: "SCP Stromp 24/25", foto: "scpstromp2425.jpeg" },
+        { nome: "SCP Total 90 Black", foto: "scptotal90black.jpeg" },
+        { nome: "SCP Train 25/26", foto: "scptrain2526.jpeg" },
+        { nome: "SCP Train 22 25/26", foto: "scptrain22526.jpeg" },
+        { nome: "SCP Train Fan Black 25/26", foto: "scptrainfanblack2526.jpeg" }
+    ],
+    "liga_pt": [
+        { nome: "Sporting CP", foto: "fotos/sporting.png", id: "sporting" }, // Adicionei o ID aqui
+        { nome: "FC Porto", foto: "fotos/porto.jpg" },
+        { nome: "SL Benfica", foto: "fotos/benfica.png" }
     ]
 };
+
 
 
 // 2. MENUS DA HOME (Símbolos das Seleções e Ligas)
