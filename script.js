@@ -116,14 +116,27 @@ const baseDeDados = {
     ]
 };
 
-// 2. MENUS DA HOME
+// 2. MENUS DA HOME (Símbolos das Seleções e Ligas)
 const menus = {
     selecoes: [
         { id: "portugal", nome: "Portugal", foto: "fotos/portugal.png" },
-        { id: "brasil", nome: "Brasil", foto: "fotos/brasil.png" }
+        { id: "brasil", nome: "Brasil", foto: "fotos/brasil.png" },
+        { id: "argentina", nome: "Argentina", foto: "fotos/argentina.png" },
+        { id: "franca", nome: "França", foto: "fotos/franca.jpeg" },
+        { id: "alemanha", nome: "Alemanha", foto: "fotos/alemanha1.png" },
+        { id: "espanha", nome: "Espanha", foto: "fotos/espanha.png" },
+        { id: "inglaterra", nome: "Inglaterra", foto: "fotos/inglaterra1.jpg" },
+        { id: "italia", nome: "Itália", foto: "fotos/italia.png" }
     ],
     ligas: [
-        { id: "liga_pt", nome: "Liga Portugal", foto: "fotos/ligaportugal.png" }
+        { id: "liga_pt", nome: "Liga Portugal", foto: "fotos/ligaportugal.png" },
+        { id: "premier", nome: "Premier League", foto: "fotos/premierligue.jpg" },
+        { id: "laliga", nome: "La Liga", foto: "fotos/laliga.png" },
+        { id: "seriea", nome: "Serie A", foto: "fotos/seriea.jpg" },
+        { id: "bundesliga", nome: "Bundesliga", foto: "fotos/bundesligue.png" },
+        { id: "ligue1", nome: "Ligue 1", foto: "fotos/ligue1.png" },
+        { id: "saudi", nome: "Saudi Pro League", foto: "fotos/saudi.png" },
+        { id: "brasileirao", nome: "Brasileirão", foto: "fotos/brasileirao1.png" }
     ]
 };
 
