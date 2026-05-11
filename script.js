@@ -128,7 +128,7 @@ const baseDeDados = {
         { nome: "FCP Special 26/27", foto: "camisolas/fcpspec2627.jpg" },
         { nome: "FCP Special Edit 25/26", foto: "camisolas/fcpspecedit2526.jpg" },
         { nome: "FCP Special Edit (v2) 25/26", foto: "camisolas/fcpspecedit22526.jpg" },
-        { nome: "FCP Special Edit Red 25/26", foto: "camisolas/fcpspeceditred2526.jpg" }
+        { nome: "FCP Special Edit Red 25/26", foto: "camisolas/fcpspeceditred2526.jpeg" }
     ],
     "benfica": [
         { nome: "SLB 23/24", foto: "camisolas/slb2324.jpg" },
