@@ -283,3 +283,59 @@ body {
     text-transform: uppercase;
 }
 
+/* ============================================================
+   CORREÇÃO DAS IMAGENS DAS CAMISOLAS
+   ============================================================ */
+
+/* 1. Grelha principal */
+.sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    width: 100%;
+}
+
+/* 2. Contentor da camisola */
+.produto-card {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 400px; /* Altura total do card */
+    overflow: hidden; /* Impede que a imagem saia para fora */
+}
+
+/* 3. A IMAGEM DA CAMISOLA (Onde está o erro) */
+.produto-card img {
+    width: 100%;      /* Ocupa a largura do card */
+    height: 250px;    /* Define uma altura fixa para a foto */
+    object-fit: cover; /* Faz a foto preencher o espaço sem deformar */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* 4. Título e Botão */
+.produto-card h3 {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.produto-card .btn-main {
+    margin-top: auto;
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+    background: #000; /* Botão preto para destacar */
+    color: #fff;
+    border: none;
+}
