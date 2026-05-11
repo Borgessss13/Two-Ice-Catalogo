@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Two Ice Store</title>
+    <!-- Favicon (Ícone na aba do navegador) -->
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
     <!-- Google Fonts -->
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ajuste rápido para alinhar o logo com o nome se quiseres adicionar o texto ao lado */
+        .brand-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        .logo-top {
+            width: 80px; /* Ajusta o tamanho conforme preferires */
+            height: auto;
+            border-radius: 50%; /* Deixa o logo redondo se for quadrado */
+        }
+    </style>
 </head>
 <body>
 
@@ -16,7 +33,6 @@
         <span></span>
         <span></span>
     </div>
-
    
     <!-- BOTÃO RETROCEDER -->
     <button id="btn-retroceder" class="retroceder-fixo" onclick="mostrarHome()">✖ Sair</button>
@@ -24,8 +40,11 @@
     <!-- SECÇÃO PRINCIPAL (Hero) -->
     <header class="hero">
         <div class="hero-content">
-            <img src="logo.jpeg" alt="Two Ice Store" class="logo-top">
-            <h1>Qualidade Premium ao Melhor Preço</h1>
+            <div class="brand-container">
+                <img src="logo.jpeg" alt="Two Ice Store" class="logo-top">
+                <h1 style="margin: 0;">Two Ice Store</h1>
+            </div>
+            <h2 style="font-size: 1.2rem; font-weight: normal; opacity: 0.9;">Qualidade Premium ao Melhor Preço</h2>
             <p>As tuas camisolas favoritas de épocas clássicas e atuais.</p>
             <a href="#catalogo-section" class="btn-main">VER CATÁLOGO COMPLETO</a>
         </div>
