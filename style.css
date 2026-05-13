@@ -339,3 +339,13 @@ body {
     color: #fff;
     border: none;
 }
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at top, #111 0%, #050505 100%);
+    position: relative;
+    overflow: hidden;
+}
