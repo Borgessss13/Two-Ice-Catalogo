@@ -4,53 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Two Ice Store</title>
-    
-    <!-- ISTO É O QUE ADICIONA O LOGO NA ABA DO SEPARADOR -->
-    <link rel="icon" type="image/jpeg" href="logo.jpeg">
-    <!-- Para garantir compatibilidade com iPhones/Android -->
-    <link rel="apple-touch-icon" href="logo.jpeg">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- ÍCONE DO MENU (3 traços) -->
-    <div id="menu-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-    <!-- BOTÃO RETROCEDER -->
-    <button id="btn-retroceder" class="retroceder-fixo" onclick="mostrarHome()">✖ Sair</button>
-
-    <!-- SECÇÃO PRINCIPAL (Hero) -->
- <header class="hero">
-    <div class="hero-overlay"></div>
-
+<!-- HERO -->
+<section class="hero">
     <div class="hero-content">
-        <img src="logo.jpeg" alt="Two Ice Store" class="logo-top">
 
-        <h1>Two Ice Store</h1>
+        <h1>CAMISOLAS DE FUTEBOL PREMIUM</h1>
+        <p>Seleções e clubes de elite — estilo, história e paixão</p>
 
-        <p>Camisas de futebol premium • Qualidade elite • Estilo autêntico</p>
-
-        <a href="#catalogo-section" class="btn-main">
+        <a href="#catalogo" class="btn-main">
             VER CATÁLOGO
         </a>
+
+    </div>
+</section>
+
+<!-- CATÁLOGO -->
+<section id="catalogo" class="catalogo">
+
+    <h2>Seleções & Clubes</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="images/portugal.jpg">
+            <h3>Portugal</h3>
+        </div>
+
+        <div class="card">
+            <img src="images/brasil.jpg">
+            <h3>Brasil</h3>
+        </div>
+
+        <div class="card">
+            <img src="images/real.jpg">
+            <h3>Real Madrid</h3>
+        </div>
+
+        <div class="card">
+            <img src="images/benfica.jpg">
+            <h3>Benfica</h3>
+        </div>
+
     </div>
 
+</section>
 
-
-    <!-- SECÇÃO DO CATÁLOGO -->
-    <section id="catalogo-section">
-        <div id="breadcrumb"></div>
-        <div id="lista"></div>
-    </section>
-
-    <!-- Scripts -->
-    <script src="script.js"></script>
 </body>
 </html>
