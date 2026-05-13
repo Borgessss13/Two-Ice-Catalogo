@@ -201,3 +201,28 @@ body {
         height: 180px;
     }
 }
+body {
+    background: #050505;
+    color: white;
+    font-family: Arial;
+}
+
+.card {
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px #ff003c;
+}
+
+button {
+    background: #ff003c;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
