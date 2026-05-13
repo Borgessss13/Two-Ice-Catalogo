@@ -1,372 +1,203 @@
 /* ============================================================
-   RESET E BASE
+   BASE GLOBAL (LIMPO E CONSISTENTE)
    ============================================================ */
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
-body { 
-    font-family: 'Inter', sans-serif; 
-    background: #f9f9f9; 
-    color: #333; 
-    scroll-behavior: smooth; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #050505;
+    color: white;
+    scroll-behavior: smooth;
 }
 
 /* ============================================================
-   SECÇÃO HERO (IMAGEM TOTAL)
+   HERO PRINCIPAL (LOJA PREMIUM)
    ============================================================ */
+
 .hero {
-    width: 100%;
     height: 100vh;
-    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
-    
-    /* CAMADA DE FUNDO: Filtro escuro + a tua foto */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('fundo2.png');
-    background-color: #000; 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    position: relative;
+    background: radial-gradient(circle at top, #111 0%, #050505 100%);
+    overflow: hidden;
 }
 
 .hero-content {
     max-width: 800px;
     padding: 20px;
-    z-index: 2;
 }
 
-.logo-top { 
-    width: 150px; 
-    margin-bottom: 25px; 
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+.hero h1 {
+    font-size: 60px;
+    color: white;
+    text-shadow: 0 0 15px #ff003c;
+    margin-bottom: 10px;
 }
 
-.hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 10px; }
-.hero p { font-size: 1.2rem; opacity: 0.9; }
+.hero p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* LOGO */
+.logo-top {
+    width: 130px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px #ff003c);
+}
 
 /* ============================================================
-   BOTÃO TRANSPARENTE COM BORDAS
+   BOTÃO PRINCIPAL (NEON MODERNO)
    ============================================================ */
+
 .btn-main {
-    background: transparent;
-    color: #fff;
-    padding: 15px 40px;
-    border: 2px solid #fff;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 35px;
-    transition: all 0.3s ease;
     display: inline-block;
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: #ff003c;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 0 15px #ff003c;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-main:hover {
-    background: #fff;
-    color: #000;
-    transform: translateY(-3px);
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #ff003c;
 }
 
 /* ============================================================
-   CAIXINHAS ESPALHADAS (ESQUERDA, CENTRO, DIREITA)
+   CATÁLOGO (GRID PROFISSIONAL)
    ============================================================ */
+
+#catalogo-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* ============================================================
+   CARD DE PRODUTO (LOJA PREMIUM)
+   ============================================================ */
+
+.card {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.3s;
+    padding-bottom: 15px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border: 1px solid #ff003c;
+    box-shadow: 0 0 25px #ff003c;
+}
+
+/* IMAGEM */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* TITULO */
+.card h3 {
+    font-size: 16px;
+    margin: 10px 0;
+    color: white;
+}
+
+/* BOTÃO DENTRO DO CARD */
+.card .btn-main {
+    width: 90%;
+    margin-top: 10px;
+    font-size: 12px;
+    padding: 10px;
+}
+
+/* ============================================================
+   HERO CAIXAS INFORMATIVAS
+   ============================================================ */
+
 .motivos-hero {
     position: absolute;
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 20px;
     width: 90%;
-    max-width: 1300px;
-    z-index: 2;
+    max-width: 1200px;
 }
 
 .motivo-card-hero {
-    background: rgba(255, 255, 255, 0.1); 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.2); 
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 12px;
     text-align: center;
-    width: 30%;
-    color: white;
-    transition: 0.3s;
 }
 
 /* ============================================================
-   CATÁLOGO E GRELHAS
+   BOTÃO SAIR / RETROCEDER
    ============================================================ */
-#catalogo-section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
-
-.sub-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-/* Ajuste dos Cards do Catálogo */
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: 0.3s;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 280px; /* Altura fixa para todos os cards ficarem iguais */
-}
-
-/* Tamanho das Imagens (Logos/Seleções) */
-.card img {
-    width: 100%;
-    height: 180px; /* Altura fixa para a imagem */
-    object-fit: contain; /* Garante que a imagem não estica e mantém a proporção */
-    margin-bottom: 15px;
-    padding: 10px;
-}
-
-.card h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-    margin-top: auto; /* Empurra o texto para o fundo do card */
-}
-
-/* Grelha para suportar os cards maiores */
-.sub-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
-    gap: 25px;
-    padding: 20px;
-}
-
-
-/* ============================================================
-   RESPONSIVIDADE (TELEMÓVEL)
-   ============================================================ */
-@media (max-width: 768px) {
-    .hero { height: auto; min-height: 100vh; padding: 100px 20px; }
-    .hero h1 { font-size: 2rem; }
-    
-    .motivos-hero { 
-        position: relative; 
-        bottom: 0; 
-        flex-direction: column; 
-        gap: 15px;
-        width: 100%;
-        margin-top: 50px; 
-    }
-    
-    .motivo-card-hero { width: 90%; }
-}
 
 .retroceder-fixo {
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 1000;
     background: #000;
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 10px 20px;
-    border-radius: 30px;
+    color: white;
+    border: 1px solid #ff003c;
+    padding: 10px 15px;
+    border-radius: 20px;
     cursor: pointer;
     display: none;
 }
 
-.btn-insta {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    color: white;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-.search-container {
-    max-width: 600px;
-    margin: 40px auto 20px;
-    position: relative;
-    padding: 0 20px;
-}
-
-#searchInput {
-    width: 100%;
-    padding: 15px 50px 15px 20px;
-    border-radius: 50px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    outline: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: 0.3s;
-}
-
-#searchInput:focus {
-    border-color: #000;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-.search-icon {
-    position: absolute;
-    right: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    color: #888;
-}
-/* Contentor que junta o logo e a barra */
-.header-search-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px; /* Espaço entre o logo e a barra */
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
-
-/* Tamanho do logo ao lado da pesquisa */
-.search-logo {
-    width: 60px; /* Tamanho pequeno para não roubar espaço */
-    height: auto;
-    object-fit: contain;
-}
-
-/* Ajuste da barra de pesquisa para não ocupar a largura toda sozinha */
-.search-container {
-    flex: 1; /* Faz a barra ocupar o resto do espaço disponível */
-    margin: 0; /* Remove a margem automática anterior */
-}
-
-/* Ajuste para Telemóvel: Logo em cima, Barra em baixo */
-@media (max-width: 600px) {
-    .header-search-wrapper {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .search-logo {
-        width: 80px;
-    }
-}
-
-/* Botão de Fechar (X) */
-.sidebar .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 36px;
-    color: white !important;
-    border: none;
-}
-
-/* Título do Menu */
-.sidebar h2 {
-    color: white;
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-}
-
 /* ============================================================
-   CORREÇÃO DAS IMAGENS DAS CAMISOLAS
+   RESPONSIVO MOBILE
    ============================================================ */
 
-/* 1. Grelha principal */
-.sub-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 25px;
-    padding: 20px;
-    width: 100%;
-}
+@media (max-width: 768px) {
 
-/* 2. Contentor da camisola */
-.produto-card {
-    background: white;
-    border-radius: 15px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 400px; /* Altura total do card */
-    overflow: hidden; /* Impede que a imagem saia para fora */
-}
+    .hero h1 {
+        font-size: 36px;
+    }
 
-/* 3. A IMAGEM DA CAMISOLA (Onde está o erro) */
-.produto-card img {
-    width: 100%;      /* Ocupa a largura do card */
-    height: 250px;    /* Define uma altura fixa para a foto */
-    object-fit: cover; /* Faz a foto preencher o espaço sem deformar */
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
+    .motivos-hero {
+        flex-direction: column;
+        position: relative;
+        transform: none;
+        left: auto;
+        bottom: auto;
+        margin-top: 40px;
+    }
 
-/* 4. Título e Botão */
-.produto-card h3 {
-    font-size: 16px;
-    color: #333;
-    margin: 10px 0;
-    height: 40px;
-    display: flex;
-    align-items: center;
-}
-
-.produto-card .btn-main {
-    margin-top: auto;
-    width: 100%;
-    padding: 10px;
-    font-size: 13px;
-    background: #000; /* Botão preto para destacar */
-    color: #fff;
-    border: none;
-}
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: radial-gradient(circle at top, #111 0%, #050505 100%);
-    position: relative;
-    overflow: hidden;
-}
-.hero h1 {
-    font-size: 60px;
-    color: #fff;
-    text-shadow: 0 0 15px #ff003c;
-}
-.btn-main {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #ff003c;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    box-shadow: 0 0 15px #ff003c;
-    transition: 0.3s;
-}
-
-.btn-main:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px #ff003c;
+    .card img {
+        height: 180px;
+    }
 }
