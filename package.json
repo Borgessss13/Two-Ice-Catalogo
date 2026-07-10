@@ -1,0 +1,13 @@
+{
+  "name": "two-ice-catalogo",
+  "version": "1.0.0",
+  "description": "Catálogo de camisolas Two Ice Store",
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jsdom": "^24.1.3"
+  }
+}
