@@ -1,5 +1,14 @@
 const listaDiv = document.getElementById('lista');
 
+// Imagem de reserva usada quando uma foto não carrega, para não deixar
+// o erro passar silenciosamente com um ícone de imagem partida.
+const FOTO_FALLBACK = 'fundo1.png';
+
+function imgTag(foto, nome) {
+    return `<img src="${foto}" alt="${nome}" loading="lazy"
+        onerror="this.onerror=null;this.src='${FOTO_FALLBACK}';this.classList.add('img-erro');">`;
+}
+
 // 1. BASE DE DADOS COMPLETA
 const baseDeDados = {
     "portugal": [
@@ -212,7 +221,7 @@ const menus = {
 function criarCard(item, funcao) {
     return `
         <div class="card" onclick="${funcao}('${item.id}', '${item.nome}')">
-            <img src="${item.foto}" alt="${item.nome}">
+            ${imgTag(item.foto, item.nome)}
             <h3>${item.nome}</h3>
         </div>
     `;
@@ -220,6 +229,10 @@ function criarCard(item, funcao) {
 
 // 4. FUNÇÃO HOME
 function mostrarHome() {
+    if (!listaDiv) {
+        console.error("Elemento '#lista' não encontrado no DOM.");
+        return;
+    }
     const btnRetro = document.getElementById('btn-retroceder');
     if (btnRetro) btnRetro.style.display = 'none';
     
@@ -233,6 +246,10 @@ function mostrarHome() {
 
 // 5. FUNÇÃO PARA VER CATEGORIAS/CAMISOLAS
 function verSubCategoria(id, nome) {
+    if (!listaDiv) {
+        console.error("Elemento '#lista' não encontrado no DOM.");
+        return;
+    }
     const btnRetro = document.getElementById('btn-retroceder');
     if (btnRetro) btnRetro.style.display = 'block';
     
@@ -255,7 +272,7 @@ function verSubCategoria(id, nome) {
             <div class="sub-grid">
                 ${itens.map(camisola => `
                     <div class="produto-card">
-                        <img src="${camisola.foto}" alt="${camisola.nome}">
+                        ${imgTag(camisola.foto, camisola.nome)}
                         <h3>${camisola.nome}</h3>
                         <button class="btn-main">Encomendar</button>
                     </div>
