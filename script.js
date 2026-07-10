@@ -208,60 +208,95 @@ const menus = {
     ]
 };
 
-// 3. FUNÇÃO AUXILIAR PARA CRIAR CARD
+// 3. FUNÇÕES AUXILIARES PARA CRIAR ELEMENTOS (DOM seguro, sem innerHTML)
+function criarTitulo(texto, classeH2) {
+    const container = document.createElement('div');
+    container.className = 'titulo-container';
+    const h2 = document.createElement('h2');
+    if (classeH2) h2.className = classeH2;
+    h2.textContent = texto;
+    container.appendChild(h2);
+    return container;
+}
+
+function criarGrid(cards) {
+    const grid = document.createElement('div');
+    grid.className = 'sub-grid';
+    cards.forEach(card => grid.appendChild(card));
+    return grid;
+}
+
 function criarCard(item, funcao) {
-    return `
-        <div class="card" onclick="${funcao}('${item.id}', '${item.nome}')">
-            <img src="${item.foto}" alt="${item.nome}">
-            <h3>${item.nome}</h3>
-        </div>
-    `;
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const img = document.createElement('img');
+    img.src = item.foto;
+    img.alt = item.nome;
+
+    const h3 = document.createElement('h3');
+    h3.textContent = item.nome;
+
+    card.append(img, h3);
+    card.addEventListener('click', () => funcao(item.id, item.nome));
+    return card;
+}
+
+function criarProdutoCard(camisola) {
+    const card = document.createElement('div');
+    card.className = 'produto-card';
+
+    const img = document.createElement('img');
+    img.src = camisola.foto;
+    img.alt = camisola.nome;
+
+    const h3 = document.createElement('h3');
+    h3.textContent = camisola.nome;
+
+    const btn = document.createElement('button');
+    btn.className = 'btn-main';
+    btn.textContent = 'Encomendar';
+
+    card.append(img, h3, btn);
+    return card;
 }
 
 // 4. FUNÇÃO HOME
 function mostrarHome() {
     const btnRetro = document.getElementById('btn-retroceder');
     if (btnRetro) btnRetro.style.display = 'none';
-    
-    listaDiv.innerHTML = `
-        <div class="titulo-container"><h2 class="section-title">Seleções</h2></div>
-        <div class="sub-grid">${menus.selecoes.map(item => criarCard(item, 'verSubCategoria')).join('')}</div>
-        <div class="titulo-container"><h2 class="section-title">Ligas</h2></div>
-        <div class="sub-grid">${menus.ligas.map(item => criarCard(item, 'verSubCategoria')).join('')}</div>
-    `;
+
+    listaDiv.innerHTML = '';
+    listaDiv.append(
+        criarTitulo('Seleções', 'section-title'),
+        criarGrid(menus.selecoes.map(item => criarCard(item, verSubCategoria))),
+        criarTitulo('Ligas', 'section-title'),
+        criarGrid(menus.ligas.map(item => criarCard(item, verSubCategoria)))
+    );
 }
 
 // 5. FUNÇÃO PARA VER CATEGORIAS/CAMISOLAS
 function verSubCategoria(id, nome) {
     const btnRetro = document.getElementById('btn-retroceder');
     if (btnRetro) btnRetro.style.display = 'block';
-    
+
     const itens = baseDeDados[id];
-    
+
+    listaDiv.innerHTML = '';
+
     if (!itens) {
-        listaDiv.innerHTML = `<p>Em breve...</p>`;
+        const aviso = document.createElement('p');
+        aviso.textContent = 'Em breve...';
+        listaDiv.appendChild(aviso);
         return;
     }
 
     // Se clicou em Liga PT, mostra os clubes. Se clicou num clube/seleção, mostra as camisolas.
+    listaDiv.appendChild(criarTitulo(nome));
     if (id === "liga_pt") {
-        listaDiv.innerHTML = `
-            <div class="titulo-container"><h2>${nome}</h2></div>
-            <div class="sub-grid">${itens.map(item => criarCard(item, 'verSubCategoria')).join('')}</div>
-        `;
+        listaDiv.appendChild(criarGrid(itens.map(item => criarCard(item, verSubCategoria))));
     } else {
-        listaDiv.innerHTML = `
-            <div class="titulo-container"><h2>${nome}</h2></div>
-            <div class="sub-grid">
-                ${itens.map(camisola => `
-                    <div class="produto-card">
-                        <img src="${camisola.foto}" alt="${camisola.nome}">
-                        <h3>${camisola.nome}</h3>
-                        <button class="btn-main">Encomendar</button>
-                    </div>
-                `).join('')}
-            </div>
-        `;
+        listaDiv.appendChild(criarGrid(itens.map(criarProdutoCard)));
     }
 }
 
