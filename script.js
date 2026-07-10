@@ -208,8 +208,16 @@ const menus = {
     ]
 };
 
-// 3. FUNÇÃO AUXILIAR PARA CRIAR CARD
-function criarCard(item, funcao) {
+// 3. UTILITÁRIOS PARTILHADOS
+
+// Mostra ou esconde o botão de retroceder.
+function toggleBotaoRetroceder(mostrar) {
+    const btnRetro = document.getElementById('btn-retroceder');
+    if (btnRetro) btnRetro.style.display = mostrar ? 'block' : 'none';
+}
+
+// Card clicável de navegação (seleção, liga ou clube).
+function criarCardCategoria(item, funcao) {
     return `
         <div class="card" onclick="${funcao}('${item.id}', '${item.nome}')">
             <img src="${item.foto}" alt="${item.nome}">
@@ -218,26 +226,41 @@ function criarCard(item, funcao) {
     `;
 }
 
+// Card de produto (camisola) com botão de encomenda.
+function criarCardProduto(camisola) {
+    return `
+        <div class="produto-card">
+            <img src="${camisola.foto}" alt="${camisola.nome}">
+            <h3>${camisola.nome}</h3>
+            <button class="btn-main">Encomendar</button>
+        </div>
+    `;
+}
+
+// Monta um bloco de secção: título + grelha de cards.
+function criarSecao(titulo, itens, renderCard, tituloClasse = '') {
+    const classe = tituloClasse ? ` class="${tituloClasse}"` : '';
+    return `
+        <div class="titulo-container"><h2${classe}>${titulo}</h2></div>
+        <div class="sub-grid">${itens.map(renderCard).join('')}</div>
+    `;
+}
+
 // 4. FUNÇÃO HOME
 function mostrarHome() {
-    const btnRetro = document.getElementById('btn-retroceder');
-    if (btnRetro) btnRetro.style.display = 'none';
-    
-    listaDiv.innerHTML = `
-        <div class="titulo-container"><h2 class="section-title">Seleções</h2></div>
-        <div class="sub-grid">${menus.selecoes.map(item => criarCard(item, 'verSubCategoria')).join('')}</div>
-        <div class="titulo-container"><h2 class="section-title">Ligas</h2></div>
-        <div class="sub-grid">${menus.ligas.map(item => criarCard(item, 'verSubCategoria')).join('')}</div>
-    `;
+    toggleBotaoRetroceder(false);
+
+    listaDiv.innerHTML =
+        criarSecao('Seleções', menus.selecoes, item => criarCardCategoria(item, 'verSubCategoria'), 'section-title') +
+        criarSecao('Ligas', menus.ligas, item => criarCardCategoria(item, 'verSubCategoria'), 'section-title');
 }
 
 // 5. FUNÇÃO PARA VER CATEGORIAS/CAMISOLAS
 function verSubCategoria(id, nome) {
-    const btnRetro = document.getElementById('btn-retroceder');
-    if (btnRetro) btnRetro.style.display = 'block';
-    
+    toggleBotaoRetroceder(true);
+
     const itens = baseDeDados[id];
-    
+
     if (!itens) {
         listaDiv.innerHTML = `<p>Em breve...</p>`;
         return;
@@ -245,23 +268,9 @@ function verSubCategoria(id, nome) {
 
     // Se clicou em Liga PT, mostra os clubes. Se clicou num clube/seleção, mostra as camisolas.
     if (id === "liga_pt") {
-        listaDiv.innerHTML = `
-            <div class="titulo-container"><h2>${nome}</h2></div>
-            <div class="sub-grid">${itens.map(item => criarCard(item, 'verSubCategoria')).join('')}</div>
-        `;
+        listaDiv.innerHTML = criarSecao(nome, itens, item => criarCardCategoria(item, 'verSubCategoria'));
     } else {
-        listaDiv.innerHTML = `
-            <div class="titulo-container"><h2>${nome}</h2></div>
-            <div class="sub-grid">
-                ${itens.map(camisola => `
-                    <div class="produto-card">
-                        <img src="${camisola.foto}" alt="${camisola.nome}">
-                        <h3>${camisola.nome}</h3>
-                        <button class="btn-main">Encomendar</button>
-                    </div>
-                `).join('')}
-            </div>
-        `;
+        listaDiv.innerHTML = criarSecao(nome, itens, criarCardProduto);
     }
 }
 
